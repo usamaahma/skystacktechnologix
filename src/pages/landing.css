@@ -1,7 +1,9 @@
+/* Base Styles */
 .landing-container {
     position: relative;
-    height: 100vh;
     width: 100%;
+    height: 100vh;
+    /* Full viewport height by default */
     overflow: hidden;
 }
 
@@ -12,6 +14,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Maintain aspect ratio, cover container */
     z-index: 1;
     opacity: 0.85;
 }
@@ -23,5 +26,67 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 0 20px;
+    padding: 0 1rem;
+    /* Reduced padding for mobile */
+    text-align: center;
+    /* Center text for overlay content */
+}
+
+/* Small Devices (up to 576px) */
+@media (max-width: 576px) {
+    .landing-container {
+        height: auto;
+        /* Allow dynamic height on mobile */
+        min-height: 100vh;
+        /* Ensure at least full viewport height */
+        aspect-ratio: 16 / 9;
+        /* Maintain video-like aspect ratio */
+    }
+
+    .landing-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ensure video fills container */
+    }
+
+    .landing-overlay {
+        padding: 0 0.5rem;
+        /* Tighter padding for small screens */
+        min-height: 100vh;
+        /* Ensure overlay covers viewport */
+        flex-direction: column;
+        /* Stack content vertically */
+    }
+}
+
+/* Tablet Devices (576px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .landing-container {
+        height: 100vh;
+        /* Restore full height for tablets */
+    }
+
+    .landing-overlay {
+        padding: 0 1.5rem;
+        /* Slightly more padding */
+    }
+}
+
+/* Handle Landscape Orientation on Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .landing-container {
+        height: auto;
+        /* Allow dynamic height */
+        min-height: 100vh;
+        /* Ensure minimum height */
+        aspect-ratio: 16 / 9;
+        /* Maintain aspect ratio */
+    }
+
+    .landing-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }

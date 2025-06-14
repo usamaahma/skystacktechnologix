@@ -15,7 +15,6 @@ const subDescriptions = [
 
 function Webdesign() {
     const sliderSettings = {
-        dots: false,
         arrows: false,
         infinite: true,
         speed: 800,
@@ -45,22 +44,16 @@ function Webdesign() {
                             className="webdesign-image"
                             loading="lazy"
                         />
-                        <div className="image-overlay"></div>
                     </div>
                 </div>
 
                 <div className="webdesign-right">
                     <div className="content-wrapper">
-                        <span className="section-badge">Our Expertise</span>
                         <h2 className="webdesign-title">Modern Web Design Solutions</h2>
-
                         <div className="webdesign-carousel">
                             <Slider {...sliderSettings}>
                                 {subDescriptions.map((text, index) => (
                                     <div className="carousel-slide" key={index}>
-                                        <svg className="check-icon" viewBox="0 0 24 24">
-                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                                        </svg>
                                         {text}
                                     </div>
                                 ))}
@@ -69,13 +62,10 @@ function Webdesign() {
 
                         <div className="description-group">
                             <p className="webdesign-description">
-                                We create digital experiences that captivate your audience and drive results. Our Melbourne-based team combines creativity with technical expertise to deliver websites that stand out.
+                                We create digital experiences that captivate your audience and drive results. Our team combines creativity with technical expertise to deliver websites that stand out.
                             </p>
                             <p className="webdesign-description">
-                                Innovation is at the heart of our design process. We craft interfaces that engage visitors and keep them coming back, ensuring your business makes a lasting impression.
-                            </p>
-                            <p className="webdesign-description">
-                                Let's collaborate to bring your vision to life. We'll work closely with you to understand your goals and build a stunning, high-performing website tailored to your needs.
+                                Innovation is at the heart of our design process. We craft interfaces that engage visitors and keep them coming back.
                             </p>
                         </div>
 
