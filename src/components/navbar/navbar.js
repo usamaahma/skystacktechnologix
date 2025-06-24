@@ -157,7 +157,7 @@ function Navbar() {
               Blog
             </NavLink>
             <NavLink
-              to="/contact"
+              to="/contactus"
               className="nav-link"
               activeClassName="active"
             >
