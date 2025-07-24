@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './navbar.css';
+import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faPhone } from '@fortawesome/free-solid-svg-icons';
+import './navbar.css';
 
 function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,18 +41,27 @@ function Navbar() {
             <div className="navbar-container">
                 {/* Left Section - Logo */}
                 <div className="navbar-left">
-                    <img
-                        src="../images/skystacklogo.png"
-                        alt="Sky Stack Technologies Logo"
-                        className="nav-logo"
-                    />
+                    <Link to="/">
+                        <img
+                            src="../images/skystacklogo.png"
+                            alt="Sky Stack Technologiz Logo"
+                            className="nav-logo"
+                            onError={(e) => {
+                                e.target.src = 'https://via.placeholder.com/150x50?text=Sky+Stack+Logo';
+                            }}
+                        />
+                    </Link>
                 </div>
 
                 {/* Center Section - Navigation Links */}
                 <div className="navbar-center">
                     <div className="navbar-links">
-                        <a href="/" className="nav-link">Home</a>
-                        <a href="/about" className="nav-link">About</a>
+                        <NavLink to="/" className="nav-link" activeClassName="active">
+                            Home
+                        </NavLink>
+                        <NavLink to="/aboutus" className="nav-link" activeClassName="active">
+                            About Us
+                        </NavLink>
 
                         <div className={`nav-dropdown ${activeDropdown === 'services' ? 'active' : ''}`}>
                             <button
@@ -61,11 +71,21 @@ function Navbar() {
                                 Services <FontAwesomeIcon icon={faChevronDown} className="dropdown-icon" />
                             </button>
                             <div className="dropdown-menu">
-                                <a href="/web-design" className="dropdown-item">Web Design</a>
-                                <a href="/web-development" className="dropdown-item">Web Development</a>
-                                <a href="/mobile-app-development" className="dropdown-item">Mobile App Development</a>
-                                <a href="/crm" className="dropdown-item">CRM</a>
-                                <a href="/digital-marketing" className="dropdown-item">Digital Marketing</a>
+                                <NavLink to="/web-design" className="dropdown-item" activeClassName="active">
+                                    Web Design
+                                </NavLink>
+                                <NavLink to="/web-development" className="dropdown-item" activeClassName="active">
+                                    Web Development
+                                </NavLink>
+                                <NavLink to="/mobile-app-development" className="dropdown-item" activeClassName="active">
+                                    Mobile App Development
+                                </NavLink>
+                                <NavLink to="/crm" className="dropdown-item" activeClassName="active">
+                                    CRM
+                                </NavLink>
+                                <NavLink to="/digital-marketing" className="dropdown-item" activeClassName="active">
+                                    Digital Marketing
+                                </NavLink>
                             </div>
                         </div>
 
@@ -77,13 +97,21 @@ function Navbar() {
                                 Portfolio <FontAwesomeIcon icon={faChevronDown} className="dropdown-icon" />
                             </button>
                             <div className="dropdown-menu">
-                                <a href="/recent-projects" className="dropdown-item">Recent Projects</a>
-                                <a href="/case-studies" className="dropdown-item">Client Case Studies</a>
+                                <NavLink to="/recent-projects" className="dropdown-item" activeClassName="active">
+                                    Recent Projects
+                                </NavLink>
+                                <NavLink to="/case-studies" className="dropdown-item" activeClassName="active">
+                                    Client Case Studies
+                                </NavLink>
                             </div>
                         </div>
 
-                        <a href="/blog" className="nav-link">Blog</a>
-                        <a href="/contact" className="nav-link">Contact</a>
+                        <NavLink to="/blog" className="nav-link" activeClassName="active">
+                            Blog
+                        </NavLink>
+                        <NavLink to="/contact" className="nav-link" activeClassName="active">
+                            Contact
+                        </NavLink>
                     </div>
                 </div>
 
@@ -110,8 +138,22 @@ function Navbar() {
             {/* Mobile Menu */}
             <div className={`mobile-navbar ${isMobileMenuOpen ? 'active' : ''}`}>
                 <div className="mobile-nav-container">
-                    <a href="/" className="mobile-nav-link active">Home</a>
-                    <a href="/about" className="mobile-nav-link">About</a>
+                    <NavLink
+                        to="/"
+                        className="mobile-nav-link"
+                        activeClassName="active"
+                        onClick={toggleMobileMenu}
+                    >
+                        Home
+                    </NavLink>
+                    <NavLink
+                        to="/aboutus"
+                        className="mobile-nav-link"
+                        activeClassName="active"
+                        onClick={toggleMobileMenu}
+                    >
+                        About Us
+                    </NavLink>
 
                     <div className="mobile-nav-dropdown">
                         <button
@@ -124,10 +166,46 @@ function Navbar() {
                             />
                         </button>
                         <div className={`dropdown-menu ${activeMobileDropdown === 'services' ? 'active' : ''}`}>
-                            <a href="/web-design" className="dropdown-item">Web Design</a>
-                            <a href="/web-development" className="dropdown-item">Web Development</a>
-                            <a href="/seo" className="dropdown-item">SEO Services</a>
-                            <a href="/digital-marketing" className="dropdown-item">Digital Marketing</a>
+                            <NavLink
+                                to="/web-design"
+                                className="dropdown-item"
+                                activeClassName="active"
+                                onClick={toggleMobileMenu}
+                            >
+                                Web Design
+                            </NavLink>
+                            <NavLink
+                                to="/web-development"
+                                className="dropdown-item"
+                                activeClassName="active"
+                                onClick={toggleMobileMenu}
+                            >
+                                Web Development
+                            </NavLink>
+                            <NavLink
+                                to="/mobile-app-development"
+                                className="dropdown-item"
+                                activeClassName="active"
+                                onClick={toggleMobileMenu}
+                            >
+                                Mobile App Development
+                            </NavLink>
+                            <NavLink
+                                to="/crm"
+                                className="dropdown-item"
+                                activeClassName="active"
+                                onClick={toggleMobileMenu}
+                            >
+                                CRM
+                            </NavLink>
+                            <NavLink
+                                to="/digital-marketing"
+                                className="dropdown-item"
+                                activeClassName="active"
+                                onClick={toggleMobileMenu}
+                            >
+                                Digital Marketing
+                            </NavLink>
                         </div>
                     </div>
 
@@ -142,14 +220,42 @@ function Navbar() {
                             />
                         </button>
                         <div className={`dropdown-menu ${activeMobileDropdown === 'portfolio' ? 'active' : ''}`}>
-                            <a href="/recent-projects" className="dropdown-item">Recent Projects</a>
-                            <a href="/case-studies" className="dropdown-item">Client Case Studies</a>
+                            <NavLink
+                                to="/recent-projects"
+                                className="dropdown-item"
+                                activeClassName="active"
+                                onClick={toggleMobileMenu}
+                            >
+                                Recent Projects
+                            </NavLink>
+                            <NavLink
+                                to="/case-studies"
+                                className="dropdown-item"
+                                activeClassName="active"
+                                onClick={toggleMobileMenu}
+                            >
+                                Client Case Studies
+                            </NavLink>
                         </div>
                     </div>
 
-                    <a href="/blog" className="mobile-nav-link">Blog</a>
-                    <a href="/contact" className="mobile-nav-link">Contact</a>
-                    <a href="tel:1300000000" className="mobile-phone-button">
+                    <NavLink
+                        to="/blog"
+                        className="mobile-nav-link"
+                        activeClassName="active"
+                        onClick={toggleMobileMenu}
+                    >
+                        Blog
+                    </NavLink>
+                    <NavLink
+                        to="/contact"
+                        className="mobile-nav-link"
+                        activeClassName="active"
+                        onClick={toggleMobileMenu}
+                    >
+                        Contact
+                    </NavLink>
+                    <a href="tel:1300000000" className="mobile-phone-button" onClick={toggleMobileMenu}>
                         <FontAwesomeIcon icon={faPhone} className="phone-icon" />
                         <span>1300 000 000</span>
                     </a>

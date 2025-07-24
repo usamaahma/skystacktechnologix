@@ -1,0 +1,313 @@
+.about-section {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #ffffff;
+}
+
+.about-hero {
+    position: relative;
+    height: 500px;
+    background: url('../../videos/aboutus.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 26, 35, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.mission-section {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.mission-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #0a1a23;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.mission-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #4facfe;
+}
+
+.mission-text {
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-section {
+    margin-bottom: 5rem;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #0a1a23;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.services-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #4facfe;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #4facfe;
+    margin-bottom: 1rem;
+}
+
+.service-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0a1a23;
+    margin-bottom: 0.75rem;
+}
+
+.service-description {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.why-choose-section {
+    background: #f1f5f9;
+    padding: 4rem 0;
+    margin-bottom: 5rem;
+}
+
+.why-choose-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #0a1a23;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.why-choose-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #4facfe;
+}
+
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.why-choose-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.item-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0a1a23;
+    margin-bottom: 0.75rem;
+}
+
+.item-description {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.about-cta {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #0a1a23;
+    margin-bottom: 1rem;
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    background: #4facfe;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #3182ce;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-hero {
+        height: 400px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .services-grid,
+    .why-choose-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 3rem 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .mission-title,
+    .services-title,
+    .why-choose-title,
+    .cta-title {
+        font-size: 2rem;
+    }
+
+    .mission-text,
+    .cta-text {
+        font-size: 1rem;
+    }
+
+    .service-card,
+    .why-choose-item {
+        padding: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero {
+        height: 300px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .services-grid,
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card,
+    .why-choose-item {
+        padding: 1.2rem;
+    }
+
+    .about-cta {
+        padding: 2rem 1rem;
+    }
+}
