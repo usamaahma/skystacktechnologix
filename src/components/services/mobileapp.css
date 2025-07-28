@@ -6,19 +6,22 @@
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin: 0 0 1rem 0;
   line-height: 1.2;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: 700;
   color: #2b6cb0;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: clamp(1.7rem, 4vw, 2rem);
   text-align: center;
   margin-bottom: 3rem;
   position: relative;
@@ -35,7 +38,7 @@ h2::after {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   color: #2b6cb0;
 }
 
@@ -81,44 +84,81 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4rem 2rem;
+  padding: clamp(2rem, 5vw, 4rem) 2rem;
   background: linear-gradient(135deg, #ffffff 0%, #ebf8ff 100%);
   min-height: 80vh;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .hero-content {
   max-width: 600px;
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: #4a5568;
   margin-bottom: 2rem;
 }
 
 .cta-buttons {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 2rem;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-image.animate-phone {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .phone-mockup {
   display: flex;
-  gap: 2rem;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .phone-frame {
-  width: 220px;
-  height: 440px;
-  border: 12px solid #2d3748;
+  width: clamp(160px, 22vw, 240px);
+  aspect-ratio: 9 / 16;
+  border: 12px solid #1a3a6e;
   border-radius: 40px;
   position: relative;
-  background: #2d3748;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #1a3a6e 0%, #2c5282 100%);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-frame:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.phone-frame.ios {
+  border-color: #1a3a6e;
+  background: linear-gradient(145deg, #1a3a6e 0%, #2c5282 100%);
 }
 
 .phone-frame.android {
-  border-color: #38a169;
-  background: #38a169;
+  border-color: #3ddc84;
+  background: linear-gradient(145deg, #3ddc84 0%, #2a9d8f 100%);
 }
 
 .phone-screen {
@@ -126,15 +166,219 @@ button {
   height: 100%;
   border-radius: 28px;
   overflow: hidden;
-  background: #f7fafc;
+  background: #f8fafc;
   position: relative;
+  transform: scale(0.95);
 }
 
+/* iOS App Interface */
 .app-interface {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
-  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+}
+
+.app-header {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+  color: white;
+}
+
+.app-title {
+  font-weight: 600;
+  font-size: clamp(14px, 2vw, 16px);
+}
+
+.app-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.app-content {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.app-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-card.primary {
+  background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+  color: white;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.stats {
+  display: flex;
+  gap: 16px;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-item strong {
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 600;
+  display: block;
+  margin-top: 4px;
+}
+
+.app-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  background: white;
+  border-top: 1px solid #e2e8f0;
+}
+
+.app-nav span {
+  font-size: clamp(18px, 2.5vw, 20px);
+  color: #718096;
+}
+
+.app-nav span.active {
+  color: #4361ee;
+}
+
+/* Android App Interface */
+.android-header {
+  background: #3ddc84;
+  color: white;
+}
+
+.status-bar {
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(10px, 1.5vw, 12px);
+}
+
+.status-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.app-bar {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.android-content {
+  flex: 1;
+  padding: 16px;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.material-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.card-media {
+  height: 120px;
+  background: linear-gradient(135deg, #3ddc84 0%, #2a9d8f 100%);
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-actions {
+  padding: 8px 16px 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.material-button {
+  background: none;
+  border: none;
+  color: #3ddc84;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fab {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  width: clamp(40px, 5vw, 56px);
+  height: clamp(40px, 5vw, 56px);
+  background: #3ddc84;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  font-size: clamp(10px, 1.5vw, 12px);
+  color: #757575;
+}
+
+.nav-item.active {
+  color: #3ddc84;
+}
+
+/* Material Icons */
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: clamp(16px, 2.5vw, 20px);
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Services Offered */
@@ -555,11 +799,11 @@ button {
   .app-hero {
     flex-direction: column;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: clamp(2rem, 5vw, 3rem) 1rem;
   }
 
   .hero-content {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .cta-buttons {
@@ -567,58 +811,54 @@ button {
   }
 
   .phone-mockup {
-    justify-content: center;
+    flex-direction: row;
+    gap: clamp(1rem, 2vw, 1.5rem);
   }
 
-  .feature, .feature.reverse {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .feature-image {
-    width: 100%;
-    margin-top: 2rem;
+  .phone-frame {
+    width: clamp(140px, 25vw, 200px);
   }
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
+  .phone-mockup {
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
   }
 
-  h2 {
-    font-size: 1.7rem;
+  .phone-frame {
+    width: clamp(120px, 40vw, 180px);
   }
 
-  .pricing-card.recommended {
-    transform: scale(1);
+  .hero-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .phone-mockup {
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .phone-frame {
+    width: clamp(100px, 60vw, 160px);
+  }
+
+  .hero-content {
+    min-width: 100%;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 2vw, 1rem);
   }
 
   .cta-buttons {
     flex-direction: column;
+    align-items: center;
   }
 
   .secondary-cta {
     margin-left: 0;
     margin-top: 1rem;
-  }
-
-  .phone-mockup {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .phone-frame {
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .services-grid, .tech-stack {
-    grid-template-columns: 1fr;
-  }
-
-  .pricing-cards {
-    grid-template-columns: 1fr;
   }
 }

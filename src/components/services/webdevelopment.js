@@ -3,10 +3,11 @@ import "./webdevelopment.css";
 
 const Webdevelopment = () => {
   const featuresRef = useRef(null);
-  
+  const mockupRef = useRef(null);
+
   useEffect(() => {
     // Animation effect for features when they come into view
-    const observer = new IntersectionObserver(
+    const featureObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -19,10 +20,29 @@ const Webdevelopment = () => {
 
     if (featuresRef.current) {
       const features = featuresRef.current.querySelectorAll(".feature");
-      features.forEach((feature) => observer.observe(feature));
+      features.forEach((feature) => featureObserver.observe(feature));
     }
 
-    return () => observer.disconnect();
+    // Animation for webdev mockup
+    const mockupObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-webdev-mockup");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (mockupRef.current) {
+      mockupObserver.observe(mockupRef.current);
+    }
+
+    return () => {
+      featureObserver.disconnect();
+      mockupObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -39,19 +59,55 @@ const Webdevelopment = () => {
             <button className="secondary-cta">See My Work</button>
           </div>
         </div>
-        <div className="hero-image">
-          <div className="code-mockup">
-            <div className="code-window">
-              <div className="code-header">
-                <div className="code-dots">
+        <div className="hero-image" ref={mockupRef}>
+          <div className="webdev-mockup">
+            <div className="webdev-window">
+              <div className="webdev-header">
+                <div className="webdev-dots">
                   <span className="red"></span>
                   <span className="yellow"></span>
                   <span className="green"></span>
                 </div>
-                <div className="code-title">app.js</div>
+                <div className="webdev-title">WebApp Dashboard</div>
+                <div className="webdev-actions">
+                  <span className="material-icons">minimize</span>
+                  <span className="material-icons">crop_square</span>
+                  <span className="material-icons">close</span>
+                </div>
               </div>
-              <div className="code-body">
-                <pre>{`import React from 'react';\nimport { NextJS, MongoDB } from 'technologies';\n\nexport default function YourWebsite() {\n  return (\n    <HighQuality \n      performance={true}\n      scalability={true}\n      security={true}\n    />\n  );\n}`}</pre>
+              <div className="webdev-body">
+                <div className="webdev-sidebar">
+                  <div className="webdev-logo">WebApp</div>
+                  <nav className="webdev-nav">
+                    <a href="#dashboard" className="active">Dashboard</a>
+                    <a href="#users">Users</a>
+                    <a href="#analytics">Analytics</a>
+                    <a href="#settings">Settings</a>
+                  </nav>
+                </div>
+                <div className="webdev-main">
+                  <div className="webdev-content-header">
+                    <h2>Dashboard Overview</h2>
+                    <button className="webdev-action-btn">Add User</button>
+                  </div>
+                  <div className="webdev-stats">
+                    <div className="webdev-stat-card">
+                      <h3>Active Users</h3>
+                      <p>1,245</p>
+                    </div>
+                    <div className="webdev-stat-card">
+                      <h3>Revenue</h3>
+                      <p>$12,300</p>
+                    </div>
+                    <div className="webdev-stat-card">
+                      <h3>Engagement</h3>
+                      <p>78%</p>
+                    </div>
+                  </div>
+                  <div className="webdev-chart">
+                    <div className="webdev-chart-placeholder">Analytics Chart</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -294,8 +350,8 @@ const Webdevelopment = () => {
           <div className="testimonial-card">
             <div className="quote-icon">"</div>
             <p className="testimonial-text">
-              The developer delivered our e-commerce platform ahead of schedule with 
-              exceptional attention to detail. The React/Node.js architecture performs 
+              The developer delivered our e-commerce platform ahead of schedule with
+              exceptional attention to detail. The React/Node.js architecture performs
               flawlessly under heavy traffic.
             </p>
             <div className="client-info">
@@ -309,8 +365,8 @@ const Webdevelopment = () => {
           <div className="testimonial-card">
             <div className="quote-icon">"</div>
             <p className="testimonial-text">
-              Our custom CRM system transformed our business operations. The developer's 
-              expertise in MongoDB and Express saved us thousands in licensing fees we'd 
+              Our custom CRM system transformed our business operations. The developer's
+              expertise in MongoDB and Express saved us thousands in licensing fees we'd
               have spent on commercial software.
             </p>
             <div className="client-info">
@@ -328,7 +384,7 @@ const Webdevelopment = () => {
       <section className="dev-final-cta">
         <h2>Ready to Build Your Web Application?</h2>
         <p>
-          Let's discuss your project requirements and create a solution that drives 
+          Let's discuss your project requirements and create a solution that drives
           your business forward.
         </p>
         <div className="cta-buttons">

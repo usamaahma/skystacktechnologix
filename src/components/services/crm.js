@@ -3,10 +3,11 @@ import "./crm.css";
 
 const CRM = () => {
   const featuresRef = useRef(null);
-  
+  const dashboardRef = useRef(null);
+
   useEffect(() => {
     // Animation effect for features when they come into view
-    const observer = new IntersectionObserver(
+    const featureObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -19,10 +20,29 @@ const CRM = () => {
 
     if (featuresRef.current) {
       const features = featuresRef.current.querySelectorAll(".feature");
-      features.forEach((feature) => observer.observe(feature));
+      features.forEach((feature) => featureObserver.observe(feature));
     }
 
-    return () => observer.disconnect();
+    // Animation for dashboard mockup
+    const dashboardObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-dashboard");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (dashboardRef.current) {
+      dashboardObserver.observe(dashboardRef.current);
+    }
+
+    return () => {
+      featureObserver.disconnect();
+      dashboardObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -39,18 +59,100 @@ const CRM = () => {
             <button className="secondary-cta">See CRM Demo</button>
           </div>
         </div>
-        <div className="hero-image">
+        <div className="hero-image" ref={dashboardRef}>
           <div className="dashboard-mockup">
             <div className="browser-bar">
-              <div className="browser-dots"></div>
+              <div className="browser-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
               <div className="browser-title">YourBusiness CRM</div>
+              <div className="browser-actions">
+                <span className="material-icons">minimize</span>
+                <span className="material-icons">crop_square</span>
+                <span className="material-icons">close</span>
+              </div>
             </div>
-            <div className="dashboard-grid">
-              <div className="dashboard-header">Customer Dashboard</div>
-              <div className="stats-card"></div>
-              <div className="activity-feed"></div>
-              <div className="recent-contacts"></div>
-              <div className="sales-chart"></div>
+            <div className="dashboard-content">
+              <div className="dashboard-sidebar">
+                <div className="sidebar-logo">CRM</div>
+                <ul className="sidebar-menu">
+                  <li className="active"><span className="material-icons">dashboard</span> Dashboard</li>
+                  <li><span className="material-icons">contacts</span> Contacts</li>
+                  <li><span className="material-icons">trending_up</span> Sales</li>
+                  <li><span className="material-icons">task</span> Tasks</li>
+                </ul>
+              </div>
+              <div className="dashboard-main">
+                <div className="dashboard-header">
+                  <h2>Customer Dashboard</h2>
+                  <div className="header-actions">
+                    <span className="material-icons">search</span>
+                    <span className="material-icons">notifications</span>
+                    <span className="user-avatar">JD</span>
+                  </div>
+                </div>
+                <div className="dashboard-grid">
+                  <div className="stats-card">
+                    <h3>Total Customers</h3>
+                    <p className="stat-value">2,450</p>
+                    <p className="stat-change positive">+12% this month</p>
+                  </div>
+                  <div className="stats-card">
+                    <h3>Monthly Revenue</h3>
+                    <p className="stat-value">$45,320</p>
+                    <p className="stat-change positive">+8% this month</p>
+                  </div>
+                  <div className="pie-chart">
+                    <h3>Sales by Region</h3>
+                    <div className="chart-placeholder">
+                      <div className="chart-segment segment1"></div>
+                      <div className="chart-segment segment2"></div>
+                      <div className="chart-segment segment3"></div>
+                    </div>
+                    <div className="chart-legend">
+                      <div><span className="legend-dot segment1"></span> North America</div>
+                      <div><span className="legend-dot segment2"></span> Europe</div>
+                      <div><span className="legend-dot segment3"></span> Asia</div>
+                    </div>
+                  </div>
+                  <div className="recent-contacts">
+                    <h3>Recent Contacts</h3>
+                    <ul>
+                      <li>
+                        <span className="contact-avatar">JD</span>
+                        <div>
+                          <span className="contact-name">John Doe</span>
+                          <span className="contact-status">Lead</span>
+                        </div>
+                      </li>
+                      <li>
+                        <span className="contact-avatar">JS</span>
+                        <div>
+                          <span className="contact-name">Jane Smith</span>
+                          <span className="contact-status">Customer</span>
+                        </div>
+                      </li>
+                      <li>
+                        <span className="contact-avatar">AB</span>
+                        <div>
+                          <span className="contact-name">Alex Brown</span>
+                          <span className="contact-status">Prospect</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="activity-feed">
+                    <h3>Recent Activity</h3>
+                    <ul>
+                      <li><span className="material-icons">email</span> Email sent to John Doe</li>
+                      <li><span className="material-icons">swap_horiz</span> Deal moved to "Negotiation"</li>
+                      <li><span className="material-icons">person_add</span> New contact added: Jane Smith</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -261,7 +363,7 @@ const CRM = () => {
           <div className="type-card">
             <h3>Operational CRM</h3>
             <p>
-              Streamline customer-facing processes with automation for marketing, 
+              Streamline customer-facing processes with automation for marketing,
               sales, and service departments.
             </p>
             <ul>
@@ -350,7 +452,7 @@ const CRM = () => {
             <div className="study-content">
               <h3>Sales Team Transformation</h3>
               <p>
-                A custom sales CRM increased lead conversion by 45% and reduced 
+                A custom sales CRM increased lead conversion by 45% and reduced
                 administrative work by 30 hours per week for a 20-person sales team.
               </p>
               <div className="study-stats">
@@ -370,7 +472,7 @@ const CRM = () => {
             <div className="study-content">
               <h3>Customer Support Revolution</h3>
               <p>
-                A support-focused CRM reduced response times from 24 hours to 
+                A support-focused CRM reduced response times from 24 hours to
                 2 hours while improving customer satisfaction scores by 35%.
               </p>
               <div className="study-stats">
@@ -392,7 +494,7 @@ const CRM = () => {
       <section className="crm-final-cta">
         <h2>Ready to Transform Your Customer Relationships?</h2>
         <p>
-          Let's build a CRM solution tailored to your unique business needs that will 
+          Let's build a CRM solution tailored to your unique business needs that will
           drive growth and efficiency.
         </p>
         <div className="cta-buttons">

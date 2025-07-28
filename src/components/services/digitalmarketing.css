@@ -1,5 +1,5 @@
 /* Base Styles */
-.digital-marketing {
+.di-digital-marketing {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   color: #1a1a1a;
   line-height: 1.6;
@@ -14,7 +14,7 @@
 }
 
 /* Text Highlight */
-.highlight {
+.di-highlight {
   color: var(--navy-blue);
 }
 
@@ -31,34 +31,34 @@ button {
   gap: 8px;
 }
 
-.primary-cta {
+.di-primary-cta {
   background-color: var(--navy-blue);
   color: var(--white);
 }
 
-.primary-cta:hover {
+.di-primary-cta:hover {
   background-color: var(--blue);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(30, 58, 138, 0.3);
 }
 
-.secondary-cta {
+.di-secondary-cta {
   background-color: transparent;
   color: var(--navy-blue);
   border: 2px solid var(--navy-blue);
 }
 
-.secondary-cta:hover {
+.di-secondary-cta:hover {
   background-color: rgba(30, 58, 138, 0.05);
 }
 
 /* Hero Section */
-.marketing-hero {
+.di-marketing-hero {
   padding: 6rem 2rem;
   background-color: var(--white);
 }
 
-.hero-container {
+.di-hero-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -66,33 +66,33 @@ button {
   gap: 4rem;
 }
 
-.hero-content {
+.di-hero-content {
   flex: 1;
 }
 
-.hero-content h1 {
+.di-hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
 }
 
-.hero-subtitle {
+.di-hero-subtitle {
   font-size: 1.1rem;
   color: #4a5568;
   margin-bottom: 2rem;
   max-width: 500px;
 }
 
-.cta-buttons {
+.di-cta-buttons {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
 }
 
-.hero-image {
+.di-hero-image {
   flex: 1;
 }
 
-.analytics-dashboard {
+.di-analytics-dashboard {
   background: var(--white);
   border-radius: 16px;
   padding: 1.5rem;
@@ -101,19 +101,19 @@ button {
   max-width: 500px;
 }
 
-.dashboard-header {
+.di-dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
 }
 
-.dashboard-header h3 {
+.di-dashboard-header h3 {
   color: var(--navy-blue);
   margin: 0;
 }
 
-.growth-badge {
+.di-growth-badge {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -125,7 +125,7 @@ button {
   font-size: 0.9rem;
 }
 
-.metric-bars {
+.di-metric-bars {
   display: flex;
   gap: 12px;
   align-items: flex-end;
@@ -133,19 +133,19 @@ button {
   margin-bottom: 2rem;
 }
 
-.bar {
+.di-bar {
   width: 40px;
   border-radius: 6px 6px 0 0;
   transition: height 0.5s ease;
 }
 
-.metric-cards {
+.di-metric-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-.metric-card {
+.di-metric-card {
   background: #f8fafc;
   border-radius: 12px;
   padding: 1.5rem;
@@ -153,40 +153,40 @@ button {
   border: 1px solid #e2e8f0;
 }
 
-.metric-value {
+.di-metric-value {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--navy-blue);
   margin-bottom: 0.5rem;
 }
 
-.metric-label {
+.di-metric-label {
   font-size: 0.9rem;
   color: #4a5568;
 }
 
 /* Services Section */
-.services-section {
+.di-services-section {
   padding: 6rem 2rem;
   background: #f8fafc;
 }
 
-.section-header {
+.di-section-header {
   text-align: center;
   max-width: 800px;
   margin: 0 auto 3rem;
 }
 
-.section-header h2 {
+.di-section-header h2 {
   color: var(--navy-blue);
 }
 
-.section-subtitle {
+.di-section-subtitle {
   font-size: 1.1rem;
   color: #64748b;
 }
 
-.services-grid {
+.di-services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
@@ -194,7 +194,7 @@ button {
   margin: 0 auto;
 }
 
-.service-card {
+.di-service-card {
   background: var(--white);
   border-radius: 16px;
   padding: 2rem;
@@ -203,13 +203,13 @@ button {
   transition: all 0.3s ease;
 }
 
-.service-card:hover {
+.di-service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   border-color: var(--sky-blue);
 }
 
-.service-icon {
+.di-service-icon {
   width: 60px;
   height: 60px;
   border-radius: 12px;
@@ -219,19 +219,19 @@ button {
   justify-content: center;
 }
 
-.service-card h3 {
+.di-service-card h3 {
   color: var(--navy-blue);
   margin-bottom: 1rem;
 }
 
 /* Results Section */
-.results-section {
+.di-results-section {
   padding: 6rem 2rem;
   background: var(--navy-blue);
   color: var(--white);
 }
 
-.results-container {
+.di-results-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -239,56 +239,56 @@ button {
   gap: 4rem;
 }
 
-.results-content {
+.di-results-content {
   flex: 1;
 }
 
-.results-content h2 {
+.di-results-content h2 {
   color: var(--white);
 }
 
-.results-content p {
+.di-results-content p {
   color: var(--sky-blue);
 }
 
-.results-stats {
+.di-results-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   flex: 1;
 }
 
-.stat-item {
+.di-stat-item {
   text-align: center;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
 }
 
-.stat-number {
+.di-stat-number {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--white);
 }
 
-.stat-label {
+.di-stat-label {
   font-size: 1rem;
   color: var(--sky-blue);
 }
 
 /* Process Section */
-.process-section {
+.di-process-section {
   padding: 6rem 2rem;
   background: var(--white);
 }
 
-.process-steps {
+.di-process-steps {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.process-step {
+.di-process-step {
   display: flex;
   gap: 2rem;
   margin-bottom: 2rem;
@@ -296,13 +296,13 @@ button {
   border-bottom: 1px solid #e2e8f0;
 }
 
-.process-step:last-child {
+.di-process-step:last-child {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-.step-number {
+.di-step-number {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--white);
@@ -316,21 +316,21 @@ button {
   flex-shrink: 0;
 }
 
-.step-content {
+.di-step-content {
   flex: 1;
 }
 
-.step-content h3 {
+.di-step-content h3 {
   color: var(--navy-blue);
 }
 
 /* Testimonials Section */
-.testimonials-section {
+.di-testimonials-section {
   padding: 6rem 2rem;
   background: #f8fafc;
 }
 
-.testimonials-grid {
+.di-testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
@@ -338,7 +338,7 @@ button {
   margin: 0 auto;
 }
 
-.testimonial-card {
+.di-testimonial-card {
   background: var(--white);
   border-radius: 16px;
   padding: 2rem;
@@ -346,12 +346,12 @@ button {
   border: 1px solid #e2e8f0;
 }
 
-.testimonial-content {
+.di-testimonial-content {
   position: relative;
   margin-bottom: 1.5rem;
 }
 
-.quote-icon {
+.di-quote-icon {
   position: absolute;
   top: -10px;
   left: -10px;
@@ -362,106 +362,108 @@ button {
   font-weight: 700;
 }
 
-.client-info {
+.di-client-info {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.client-avatar {
+.di-client-avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background: var(--sky-blue);
 }
 
-.client-details h4 {
+.di-client-details h4 {
   color: var(--navy-blue);
   margin-bottom: 0.25rem;
 }
 
-.client-details p {
+.di-client-details p {
   margin: 0;
   font-size: 0.9rem;
   color: #64748b;
 }
 
-.client-rating {
+.di-client-rating {
   display: flex;
   gap: 2px;
   margin-top: 0.5rem;
 }
 
 /* CTA Section */
-.cta-section {
+.di-cta-section {
   padding: 6rem 2rem;
   background: var(--navy-blue);
   color: var(--white);
   text-align: center;
 }
 
-.cta-container {
+.di-cta-container {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.cta-section h2 {
+.di-cta-section h2 {
   color: var(--white);
 }
 
-.cta-section p {
+.di-cta-section p {
   color: var(--sky-blue);
   margin-bottom: 2rem;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .hero-container,
-  .results-container {
+
+  .di-hero-container,
+  .di-results-container {
     flex-direction: column;
     gap: 2rem;
   }
 
-  .analytics-dashboard {
+  .di-analytics-dashboard {
     margin: 0 auto;
   }
 
-  .results-content {
+  .di-results-content {
     text-align: center;
     margin-bottom: 3rem;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-content h1 {
+  .di-hero-content h1 {
     font-size: 2rem;
   }
 
-  .cta-buttons {
+  .di-cta-buttons {
     flex-direction: column;
   }
 
-  .secondary-cta {
+  .di-secondary-cta {
     margin-left: 0;
     margin-top: 1rem;
   }
 
-  .results-stats {
+  .di-results-stats {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .services-grid,
-  .testimonials-grid {
+
+  .di-services-grid,
+  .di-testimonials-grid {
     grid-template-columns: 1fr;
   }
 
-  .metric-cards {
+  .di-metric-cards {
     grid-template-columns: 1fr;
   }
 
-  .process-step {
+  .di-process-step {
     flex-direction: column;
     gap: 1rem;
   }

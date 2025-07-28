@@ -8,6 +8,7 @@ import MobileApp from "./components/services/mobileapp";
 import CRM from "./components/services/crm";
 import DigitalMarketing from "./components/services/digitalmarketing";
 import Webdesign1 from "./components/services/webdesignmain";
+import Portfolio from "./components/portfolio/portfolio";
 // import NotFound from './components/NotFound';
 
 const AppRoutes = () => {
@@ -21,7 +22,7 @@ const AppRoutes = () => {
       <Route path="/mobile-app-development" element={<MobileApp />} />
       <Route path="/crm" element={<CRM />} />
       <Route path="/digital-marketing" element={<DigitalMarketing />} />
-
+      <Route path="/portfolio" element={<Portfolio />} />
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
   );

@@ -3,10 +3,11 @@ import "./webdesignmain.css";
 
 const Webdesign1 = () => {
   const featuresRef = useRef(null);
+  const mockupRef = useRef(null);
 
   useEffect(() => {
     // Animation effect for features when they come into view
-    const observer = new IntersectionObserver(
+    const featureObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -19,10 +20,29 @@ const Webdesign1 = () => {
 
     if (featuresRef.current) {
       const features = featuresRef.current.querySelectorAll(".feature");
-      features.forEach((feature) => observer.observe(feature));
+      features.forEach((feature) => featureObserver.observe(feature));
     }
 
-    return () => observer.disconnect();
+    // Animation for website mockup
+    const mockupObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-mockup");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (mockupRef.current) {
+      mockupObserver.observe(mockupRef.current);
+    }
+
+    return () => {
+      featureObserver.disconnect();
+      mockupObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -40,12 +60,59 @@ const Webdesign1 = () => {
             <button className="secondary-cta">View Portfolio</button>
           </div>
         </div>
-        <div className="hero-image">
+        <div className="hero-image" ref={mockupRef}>
           <div className="website-mockup">
             <div className="browser-bar">
-              <div className="browser-dots"></div>
+              <div className="browser-dots">
+                <div className="dot red"></div>
+                <div className="dot yellow"></div>
+                <div className="dot green"></div>
+              </div>
+              <div className="browser-title">YourBusiness.com</div>
+              <div className="browser-actions">
+                <span className="material-icons">minimize</span>
+                <span className="material-icons">crop_square</span>
+                <span className="material-icons">close</span>
+              </div>
             </div>
-            <div className="mockup-content"></div>
+            <div className="mockup-content">
+              <header className="mockup-header">
+                <div className="mockup-logo">YourBusiness</div>
+                <nav className="mockup-nav">
+                  <a href="#home">Home</a>
+                  <a href="#services">Services</a>
+                  <a href="#about">About</a>
+                  <a href="#contact">Contact</a>
+                </nav>
+              </header>
+              <div className="mockup-hero">
+                <h2>Welcome to YourBusiness</h2>
+                <p>Empower your brand with a stunning website</p>
+                <button className="mockup-cta">Get Started</button>
+              </div>
+              <div className="mockup-features">
+                <div className="feature-card">
+                  <h3>Feature 1</h3>
+                  <p>Boost engagement with modern design</p>
+                </div>
+                <div className="feature-card">
+                  <h3>Feature 2</h3>
+                  <p>Fast, responsive, and reliable</p>
+                </div>
+                <div className="feature-card">
+                  <h3>Feature 3</h3>
+                  <p>SEO optimized for growth</p>
+                </div>
+              </div>
+              <footer className="mockup-footer">
+                <div className="footer-links">
+                  <a href="#privacy">Privacy</a>
+                  <a href="#terms">Terms</a>
+                  <a href="#support">Support</a>
+                </div>
+                <div className="footer-copy">© 2025 YourBusiness</div>
+              </footer>
+            </div>
           </div>
         </div>
       </section>

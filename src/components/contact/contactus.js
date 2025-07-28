@@ -69,25 +69,6 @@ function Contactus() {
 
   return (
     <div className="contact-page">
-      {/* Hero Section */}
-      <section className="contact-hero">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="hero-content"
-          >
-            <h1>Get in Touch</h1>
-            <p>
-              We'd love to hear from you. Reach out to our team for any
-              inquiries.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
       <section className="contact-section">
         <div className="container">
           <div className="contact-grid">

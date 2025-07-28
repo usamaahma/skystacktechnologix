@@ -3,10 +3,11 @@ import "./mobileapp.css";
 
 const MobileApp = () => {
   const featuresRef = useRef(null);
+  const phoneMockupRef = useRef(null);
 
   useEffect(() => {
-    // Animation effect for features when they come into view
-    const observer = new IntersectionObserver(
+    // Observer for feature animations
+    const featureObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -19,10 +20,29 @@ const MobileApp = () => {
 
     if (featuresRef.current) {
       const features = featuresRef.current.querySelectorAll(".feature");
-      features.forEach((feature) => observer.observe(feature));
+      features.forEach((feature) => featureObserver.observe(feature));
     }
 
-    return () => observer.disconnect();
+    // Observer for phone mockup animations
+    const phoneObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-phone");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (phoneMockupRef.current) {
+      phoneObserver.observe(phoneMockupRef.current);
+    }
+
+    return () => {
+      featureObserver.disconnect();
+      phoneObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -40,16 +60,43 @@ const MobileApp = () => {
             <button className="secondary-cta">See App Portfolio</button>
           </div>
         </div>
-        <div className="hero-image">
+        <div className="hero-image" ref={phoneMockupRef}>
           <div className="phone-mockup">
-            <div className="phone-frame">
+            <div className="phone-frame ios">
               <div className="phone-screen">
-                <div className="app-interface"></div>
-              </div>
-            </div>
-            <div className="phone-frame android">
-              <div className="phone-screen">
-                <div className="app-interface"></div>
+                <div className="app-interface">
+                  <div className="app-header">
+                    <span className="app-title">MyApp</span>
+                    <div className="app-actions">
+                      <span className="material-icons">search</span>
+                      <span className="material-icons">notifications</span>
+                    </div>
+                  </div>
+                  <div className="app-content">
+                    <div className="app-card primary">
+                      <h4>Welcome Back!</h4>
+                      <p>You have 3 new notifications</p>
+                    </div>
+                    <div className="app-card">
+                      <div className="card-header">
+                        <h5>Dashboard</h5>
+                      </div>
+                      <div className="stats">
+                        <div className="stat-item">
+                          <span>Users</span>
+                          <strong>1,240</strong>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div className="app-nav">
+                      <span className="material-icons active">home</span>
+                      <span className="material-icons">explore</span>
+                      <span className="material-icons">shopping_cart</span>
+                      <span className="material-icons">person</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -67,9 +67,8 @@ function Navbar() {
             </NavLink>
 
             <div
-              className={`nav-dropdown ${
-                activeDropdown === "services" ? "active" : ""
-              }`}
+              className={`nav-dropdown ${activeDropdown === "services" ? "active" : ""
+                }`}
             >
               <button
                 className="nav-link dropdown-toggle"
@@ -120,42 +119,15 @@ function Navbar() {
               </div>
             </div>
 
-            <div
-              className={`nav-dropdown ${
-                activeDropdown === "portfolio" ? "active" : ""
-              }`}
+            <NavLink
+              to="/portfolio"
+              className="nav-link"
+              activeClassName="active"
             >
-              <button
-                className="nav-link dropdown-toggle"
-                onClick={() => toggleDropdown("portfolio")}
-              >
-                Portfolio{" "}
-                <FontAwesomeIcon
-                  icon={faChevronDown}
-                  className="dropdown-icon"
-                />
-              </button>
-              <div className="dropdown-menu">
-                <NavLink
-                  to="/recent-projects"
-                  className="dropdown-item"
-                  activeClassName="active"
-                >
-                  Recent Projects
-                </NavLink>
-                <NavLink
-                  to="/case-studies"
-                  className="dropdown-item"
-                  activeClassName="active"
-                >
-                  Client Case Studies
-                </NavLink>
-              </div>
-            </div>
-
-            <NavLink to="/blog" className="nav-link" activeClassName="active">
-              Blog
+              Portfolio
             </NavLink>
+
+
             <NavLink
               to="/contactus"
               className="nav-link"
@@ -215,15 +187,13 @@ function Navbar() {
               Services{" "}
               <FontAwesomeIcon
                 icon={faChevronDown}
-                className={`dropdown-icon ${
-                  activeMobileDropdown === "services" ? "active" : ""
-                }`}
+                className={`dropdown-icon ${activeMobileDropdown === "services" ? "active" : ""
+                  }`}
               />
             </button>
             <div
-              className={`dropdown-menu ${
-                activeMobileDropdown === "services" ? "active" : ""
-              }`}
+              className={`dropdown-menu ${activeMobileDropdown === "services" ? "active" : ""
+                }`}
             >
               <NavLink
                 to="/web-design"
@@ -268,15 +238,13 @@ function Navbar() {
               Portfolio{" "}
               <FontAwesomeIcon
                 icon={faChevronDown}
-                className={`dropdown-icon ${
-                  activeMobileDropdown === "portfolio" ? "active" : ""
-                }`}
+                className={`dropdown-icon ${activeMobileDropdown === "portfolio" ? "active" : ""
+                  }`}
               />
             </button>
             <div
-              className={`dropdown-menu ${
-                activeMobileDropdown === "portfolio" ? "active" : ""
-              }`}
+              className={`dropdown-menu ${activeMobileDropdown === "portfolio" ? "active" : ""
+                }`}
             >
               <NavLink
                 to="/recent-projects"
@@ -296,15 +264,6 @@ function Navbar() {
               </NavLink>
             </div>
           </div>
-
-          <NavLink
-            to="/blog"
-            className="mobile-nav-link"
-            activeClassName="active"
-            onClick={toggleMobileMenu}
-          >
-            Blog
-          </NavLink>
           <NavLink
             to="/contact"
             className="mobile-nav-link"

@@ -96,7 +96,7 @@ function About() {
         <img src={heroBg} alt="Skystack Technologies" className="hero-bg" />
         <div className="container">
           <motion.div
-            className="hero-content"
+            className="hero-content-about"
             initial="hidden"
             animate="visible"
             variants={fadeIn}
@@ -106,7 +106,7 @@ function About() {
               Pioneering digital transformation since 2015
             </p>
             <motion.a
-              href="/contact"
+              href="/contactus"
               className="cta-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -142,15 +142,15 @@ function About() {
             </div>
             <div className="intro-stats">
               <div className="stat-item">
-                <div className="stat-number">150+</div>
+                <div className="stat-number-about">150+</div>
                 <div className="stat-label">Experts</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">500+</div>
+                <div className="stat-number-about">500+</div>
                 <div className="stat-label">Clients</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">15+</div>
+                <div className="stat-number-about">15+</div>
                 <div className="stat-label">Countries</div>
               </div>
             </div>
@@ -378,11 +378,11 @@ function About() {
                 combine global reach with local expertise.
               </p>
               <div className="office-features">
-                <div className="feature">
+                <div className="feature-about">
                   <i className="fas fa-map-marker-alt"></i>
                   <span>Sydney, Australia</span>
                 </div>
-                <div className="feature">
+                <div className="feature-about">
                   <i className="fas fa-building"></i>
                   <span>5 Global Offices</span>
                 </div>

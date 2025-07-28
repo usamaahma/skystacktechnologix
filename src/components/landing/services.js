@@ -16,25 +16,25 @@ function Services() {
             title: 'Web Design & Development',
             description: 'Crafting stunning, responsive websites with React, Next.js, and headless architectures for optimal performance and scalability.',
             video: vid1,
-            link: '/services/web-design-development'
+            link: '/web-design'
         },
         {
             title: 'Mobile App Development',
             description: 'Building intuitive, high-performance mobile apps for iOS and Android using modern frameworks like React Native.',
             video: vid2,
-            link: '/services/mobile-app-development'
+            link: '/mobile-app-development'
         },
         {
             title: 'Digital Marketing',
             description: 'Driving growth with data-driven SEO, PPC, and social media strategies to boost your brands online presence.',
             video: vid3,
-            link: '/services/digital-marketing'
+            link: '/digital-marketing'
         },
         {
             title: 'WordPress & Shopify Development',
             description: 'Creating customized, user-friendly e-commerce and CMS solutions tailored to your business needs.',
             video: vid4,
-            link: '/services/wordpress-shopify'
+            link: '/web-development'
         },
         {
             title: 'CRM Solutions',
@@ -45,34 +45,34 @@ function Services() {
     ];
 
     return (
-        <section className="services-section" aria-label="Our Services">
-            <h2 className="services-heading">What Services We Provide</h2>
-            <div className="services-grid">
+        <section className="service-services-section" aria-label="Our Services">
+            <h2 className="service-services-heading">What Services We Provide</h2>
+            <div className="service-services-grid">
                 {services.map((service, index) => (
                     <div
                         key={index}
-                        className="service-card"
+                        className="service-service-card"
                         onClick={() => navigate(service.link)}
                         role="button"
                         tabIndex={0}
                         aria-label={`Learn more about ${service.title}`}
                         onKeyDown={(e) => e.key === 'Enter' && navigate(service.link)}
                     >
-                        <div className="video-container">
+                        <div className="service-video-container">
                             <video
-                                className="service-video"
+                                className="service-service-video"
                                 muted
                                 loop
                                 playsInline
-                                autoPlay  // Add this for initial play
+                                autoPlay
                             >
                                 <source src={service.video} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className="service-overlay">
-                            <h3 className="service-title">{service.title}</h3>
-                            <p className="service-description">{service.description}</p>
+                        <div className="service-service-overlay">
+                            <h3 className="service-service-title">{service.title}</h3>
+                            <p className="service-service-description">{service.description}</p>
                         </div>
                     </div>
                 ))}
