@@ -406,7 +406,7 @@ function About() {
             variants={fadeIn}
           >
             <h2>Ready to Transform Your Business?</h2>
-            <p>
+            <p style={{ color: "white" }}>
               Let's discuss how Skystack can help you achieve your digital
               goals.
             </p>
