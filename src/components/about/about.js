@@ -5,7 +5,7 @@ import "./about.css";
 const heroBg =
   "https://img.freepik.com/free-photo/guy-shows-document-girl-group-young-freelancers-office-have-conversation-working_146671-13569.jpg?semt=ais_hybrid&w=740";
 const teamImage =
-  "https://images.unsplash.com/photo-1571260898930-a8a1c5a3e127?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80";
+  "https://images.unsplash.com/photo-1571260898930-8a1c5a3e127?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80";
 const missionImage =
   "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80";
 const ceoImage =
@@ -21,17 +21,17 @@ function About() {
   // Team data
   const teamMembers = [
     {
-      name: "John Carter",
+      name: "Ahmed Khan",
       role: "CEO & Founder",
       image: ceoImage,
-      bio: "Serial entrepreneur with 20+ years in tech innovation",
+      bio: "Tech entrepreneur with 15+ years in software development",
       social: {
         linkedin: "#",
         twitter: "#",
       },
     },
     {
-      name: "Sarah Johnson",
+      name: "Fatima Riaz",
       role: "CTO",
       image: ctoImage,
       bio: "Cloud architecture expert and AI specialist",
@@ -41,10 +41,10 @@ function About() {
       },
     },
     {
-      name: "Michael Chen",
+      name: "Bilal Ahmed",
       role: "Lead Developer",
       image: devImage,
-      bio: "Full-stack wizard with passion for clean code",
+      bio: "Full-stack developer with passion for clean code",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -66,6 +66,48 @@ function About() {
         "The most professional IT partner we've worked with. Delivered beyond expectations.",
       author: "David Kim",
       position: "CTO, FinTech Global",
+      rating: 5,
+    },
+    {
+      quote:
+        "Our website looks amazing! Communication was clear and delivery was super fast. Highly recommended.",
+      author: "Maria Gonzalez",
+      position: "Founder, Luxe Beauty",
+      rating: 5,
+    },
+    {
+      quote:
+        "They went above and beyond. Every request was handled with professionalism. Would hire again.",
+      author: "James Patel",
+      position: "Marketing Lead, Trendify",
+      rating: 5,
+    },
+    {
+      quote:
+        "One of the best developers I've worked with on Fiverr. Everything was pixel perfect and on time.",
+      author: "Ayesha Malik",
+      position: "Owner, DigitalDazzle",
+      rating: 5,
+    },
+    {
+      quote:
+        "Our ecommerce site was launched smoothly and with zero bugs. The team is top-notch.",
+      author: "Liam Carter",
+      position: "Operations Manager, UrbanCart",
+      rating: 5,
+    },
+    {
+      quote:
+        "Skystack turned our ideas into a beautiful, functional WordPress website. We get compliments daily!",
+      author: "Chloe Nguyen",
+      position: "Creative Director, StudioBloom",
+      rating: 5,
+    },
+    {
+      quote:
+        "Extremely reliable and talented. We’ve done 4 projects together now and every one was flawless.",
+      author: "Michael B.",
+      position: "Repeat Buyer on Fiverr",
       rating: 5,
     },
   ];
@@ -103,7 +145,7 @@ function About() {
           >
             <h1>About Skystack</h1>
             <p className="subtitle">
-              Pioneering digital transformation since 2015
+              Pioneering digital transformation since 2018
             </p>
             <motion.a
               href="/contactus"
@@ -130,28 +172,28 @@ function About() {
             <div className="intro-text">
               <h2>Redefining Technology Solutions</h2>
               <p className="lead">
-                Skystack Technologies is a global leader in digital innovation,
-                helping businesses transform and thrive in the digital economy.
+                Skystack Technologies is a leading Pakistani IT company, helping
+                businesses transform and thrive in the digital economy.
               </p>
               <p>
-                Founded in 2015, we've grown from a Sydney-based startup to an
-                international technology powerhouse serving clients across 4
-                continents. Our team of 150+ experts delivers cutting-edge
-                solutions tailored to your unique business needs.
+                Founded in 2018, we've grown from a Lahore-based startup to a
+                national technology leader serving clients across Pakistan. Our
+                team of 50+ experts delivers cutting-edge solutions tailored to
+                your unique business needs.
               </p>
             </div>
             <div className="intro-stats">
               <div className="stat-item">
-                <div className="stat-number-about">150+</div>
+                <div className="stat-number-about">50+</div>
                 <div className="stat-label">Experts</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number-about">500+</div>
+                <div className="stat-number-about">200+</div>
                 <div className="stat-label">Clients</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number-about">15+</div>
-                <div className="stat-label">Countries</div>
+                <div className="stat-number-about">10+</div>
+                <div className="stat-label">Cities</div>
               </div>
             </div>
           </div>
@@ -175,9 +217,10 @@ function About() {
               <div className="section-tag">Our Purpose</div>
               <h2>Driving Digital Excellence</h2>
               <p>
-                We exist to empower businesses through innovative technology
-                solutions that create real competitive advantage. Our mission is
-                to be the catalyst for your digital transformation journey.
+                We exist to empower Pakistani businesses through innovative
+                technology solutions that create real competitive advantage. Our
+                mission is to be the catalyst for your digital transformation
+                journey.
               </p>
               <ul className="mission-list">
                 <li>
@@ -233,14 +276,6 @@ function About() {
               >
                 <div className="team-card-image">
                   <img src={member.image} alt={member.name} />
-                  <div className="social-links">
-                    <a href={member.social.linkedin} aria-label="LinkedIn">
-                      <i className="fab fa-linkedin"></i>
-                    </a>
-                    <a href={member.social.twitter} aria-label="Twitter">
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                  </div>
                 </div>
                 <div className="team-card-content">
                   <h3>{member.name}</h3>
@@ -356,6 +391,14 @@ function About() {
               </motion.div>
             ))}
           </motion.div>
+          <a
+            href="https://www.fiverr.com/s/Kejz8Dz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button"
+          >
+            View More Reviews
+          </a>
         </div>
       </section>
 
@@ -371,20 +414,19 @@ function About() {
           >
             <motion.div className="office-content" variants={fadeIn}>
               <div className="section-tag">Our Spaces</div>
-              <h2>Global Headquarters</h2>
+              <h2>Our Lahore Headquarters</h2>
               <p>
-                Our state-of-the-art Sydney office is designed for collaboration
-                and innovation. With satellite offices in 5 countries, we
-                combine global reach with local expertise.
+                Our state-of-the-art Lahore office is designed for collaboration
+                and innovation. Located in the heart of Gulberg, we combine
+                modern technology with a comfortable work environment.
               </p>
               <div className="office-features">
                 <div className="feature-about">
                   <i className="fas fa-map-marker-alt"></i>
-                  <span>Sydney, Australia</span>
-                </div>
-                <div className="feature-about">
-                  <i className="fas fa-building"></i>
-                  <span>5 Global Offices</span>
+                  <span>
+                    Office # 1022, Third Floor, Siddique Trade Center, Main
+                    Boulevard Gulberg, Block H Gulberg 2, Lahore, 54660
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -406,12 +448,12 @@ function About() {
             variants={fadeIn}
           >
             <h2>Ready to Transform Your Business?</h2>
-            <p>
+            <p style={{ color: "white" }}>
               Let's discuss how Skystack can help you achieve your digital
               goals.
             </p>
             <motion.a
-              href="/contact"
+              href="/contactus"
               className="cta-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

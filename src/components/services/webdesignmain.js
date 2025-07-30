@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./webdesignmain.css";
+import { Link } from "react-router-dom";
 
 const Webdesign1 = () => {
   const featuresRef = useRef(null);
@@ -56,8 +57,12 @@ const Webdesign1 = () => {
             captivate your audience and drive results.
           </p>
           <div className="cta-buttons">
-            <button className="primary-cta">Get Your Website Now</button>
-            <button className="secondary-cta">View Portfolio</button>
+            <Link to="/contactus">
+              <button className="primary-cta">Get Your Website Now</button>
+            </Link>
+            <Link to="/portfolio">
+              <button className="secondary-cta">View Portfolio</button>
+            </Link>
           </div>
         </div>
         <div className="hero-image" ref={mockupRef}>
@@ -350,8 +355,21 @@ const Webdesign1 = () => {
           your project and receive a free consultation.
         </p>
         <div className="cta-buttons">
-          <button className="primary-cta">Get Your Free Quote</button>
-          <button className="secondary-cta">Schedule a Call</button>
+          <Link to="/contactus">
+            <button className="primary-cta">Get Your Free Quote</button>
+          </Link>
+          <button
+            className="secondary-cta"
+            onClick={() =>
+              window.open(
+                "https://wa.me/923088798324",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
+            Schedule a Call
+          </button>
         </div>
       </section>
     </div>

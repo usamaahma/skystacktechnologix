@@ -67,8 +67,9 @@ function Navbar() {
             </NavLink>
 
             <div
-              className={`nav-dropdown ${activeDropdown === "services" ? "active" : ""
-                }`}
+              className={`nav-dropdown ${
+                activeDropdown === "services" ? "active" : ""
+              }`}
             >
               <button
                 className="nav-link dropdown-toggle"
@@ -127,7 +128,6 @@ function Navbar() {
               Portfolio
             </NavLink>
 
-
             <NavLink
               to="/contactus"
               className="nav-link"
@@ -140,9 +140,9 @@ function Navbar() {
 
         {/* Right Section - Phone Button */}
         <div className="navbar-right">
-          <a href="tel:1300000000" className="phone-button">
+          <a href="tel:+923088798324" className="phone-button">
             <FontAwesomeIcon icon={faPhone} className="phone-icon" />
-            <span>1300 000 000</span>
+            <span>92 308 8798324</span>
           </a>
         </div>
 
@@ -187,13 +187,15 @@ function Navbar() {
               Services{" "}
               <FontAwesomeIcon
                 icon={faChevronDown}
-                className={`dropdown-icon ${activeMobileDropdown === "services" ? "active" : ""
-                  }`}
+                className={`dropdown-icon ${
+                  activeMobileDropdown === "services" ? "active" : ""
+                }`}
               />
             </button>
             <div
-              className={`dropdown-menu ${activeMobileDropdown === "services" ? "active" : ""
-                }`}
+              className={`dropdown-menu ${
+                activeMobileDropdown === "services" ? "active" : ""
+              }`}
             >
               <NavLink
                 to="/web-design"
@@ -238,13 +240,15 @@ function Navbar() {
               Portfolio{" "}
               <FontAwesomeIcon
                 icon={faChevronDown}
-                className={`dropdown-icon ${activeMobileDropdown === "portfolio" ? "active" : ""
-                  }`}
+                className={`dropdown-icon ${
+                  activeMobileDropdown === "portfolio" ? "active" : ""
+                }`}
               />
             </button>
             <div
-              className={`dropdown-menu ${activeMobileDropdown === "portfolio" ? "active" : ""
-                }`}
+              className={`dropdown-menu ${
+                activeMobileDropdown === "portfolio" ? "active" : ""
+              }`}
             >
               <NavLink
                 to="/recent-projects"
@@ -272,9 +276,9 @@ function Navbar() {
           >
             Contact
           </NavLink>
-          <a href="tel:1300000000" className="mobile-phone-button">
+          <a href="tel:+923088798324" className="mobile-phone-button">
             <FontAwesomeIcon icon={faPhone} className="phone-icon" />
-            <span>1300 000 000</span>
+            <span>92 308 8798324</span>
           </a>
         </div>
       </div>
