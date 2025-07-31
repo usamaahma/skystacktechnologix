@@ -6,12 +6,12 @@ const cardData = [
     {
         id: 'Expertise_mmw',
         title: 'Years Of Expertise',
-        value: 10,
+        value: 5,
         unit: '+',
     },
     {
         id: 'Australian_Owned_mmw',
-        title: 'Australian Owned',
+        title: 'Pakistani Owned Company',
         value: 100,
         unit: '%',
     },
@@ -23,8 +23,8 @@ const cardData = [
     },
     {
         id: 'Satisfied-Clients',
-        title: 'Satisfied Clients',
-        value: 1000,
+        title: '100% Satisfied Clients',
+        value: 10,
         unit: '+',
     },
 ];

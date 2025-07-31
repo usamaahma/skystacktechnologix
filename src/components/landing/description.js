@@ -7,41 +7,39 @@ const Description = () => {
       <div className="blue-description-header">
         <h1 className="blue-company-name">Sky Stack Technologiz</h1>
         <p className="blue-company-tagline">
-          Your Premier Digital Solutions Partner in Melbourne
+          Your Trusted IT Solutions Partner in Gulberg, Lahore
         </p>
       </div>
 
       <div className="blue-description-content">
         <p>
-          At Sky Stack Technologiz, we engineer digital experiences from the
-          ground up. Every client insight becomes a building block in our
-          strategic process, transforming your vision into digital reality
-          through our technical mastery.
+          At Sky Stack Technologiz, we craft digital experiences tailored for the Pakistani market.
+          Every business we work with becomes part of our journey—where your ideas evolve into
+          digital realities through strategy, design, and cutting-edge technology.
         </p>
 
         <p>
-          Let's be honest - Melbourne's tech landscape is crowded with
-          developers. The real differentiator? A partner that delivers on
-          promises with pixel-perfect execution.
+          Let's face it — the tech industry in Pakistan is growing rapidly. But what truly sets us
+          apart is our commitment to deliver high-quality solutions with integrity, precision, and
+          care that matches international standards.
         </p>
 
         <p>
-          We create digital assets that command attention and convert visitors.
-          Websites that dominate visually and technically - striking aesthetics,
-          flawless functionality, intuitive navigation, and conversion-optimized
-          design working in perfect harmony.
+          We build websites and digital products that not only look stunning but also perform
+          seamlessly—designed for conversions, user-friendly interfaces, mobile responsiveness,
+          and fast loading times. Whether you're a startup in Lahore or a growing brand nationwide,
+          we help you stand out online.
         </p>
 
         <div className="blue-description-highlight">
-          Our decade-long journey has sharpened our expertise to architect
-          digital growth engines that amplify your online presence organically.
+          With over a decade of hands-on experience, we specialize in building digital platforms
+          that drive organic growth and strengthen your brand’s presence across Pakistan and beyond.
         </div>
       </div>
 
       <div className="blue-description-footer">
-        <p>
-          Ready to transform your digital presence? Let's create something
-          remarkable.
+        <p style={{ color: "white" }}>
+          Ready to elevate your digital journey? Let’s build something extraordinary—right here from Lahore.
         </p>
       </div>
     </div>

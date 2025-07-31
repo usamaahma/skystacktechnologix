@@ -494,7 +494,12 @@ button {
 }
 
 .mobile-design {
-  background: linear-gradient(45deg, #1a3a6e 0%, #87ceeb 100%);
+  background:
+    linear-gradient(45deg, #1a3a6e 0%, #87ceeb 100%),
+    url('../../../public/images/mobile-responsive.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .seo-optimized {

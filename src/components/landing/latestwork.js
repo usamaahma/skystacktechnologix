@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './latestwork.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./latestwork.css";
 
 function LatestWork() {
   const navigate = useNavigate();
@@ -10,48 +10,64 @@ function LatestWork() {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'Full-featured online store with payment integration.',
-      image: "../images/web-design.jpg",
-      link: '/work/ecommerce-platform',
-      tags: ['React', 'Node.js', 'MongoDB']
+      title: "Bongodeshi",
+      description: "Full-featured online store with payment integration.",
+      image: "../images/bongodeshi.png",
+      link: "/portfolio",
+      tags: ["Next.js", "Node.js", "MongoDB"],
     },
     {
-      title: 'Mobile Banking App',
-      description: 'Secure banking app with biometric authentication.',
-      image: "../images/web-design.jpg",
-      link: '/work/mobile-banking',
-      tags: ['React Native', 'Firebase']
+      title: "Clock 360",
+      description: "A Crypto Auto Compunding Protocol Website.",
+      image: "../images/clock.png",
+      link: "/portfolio",
+      tags: ["React.js", "Antd", "React Bootstrap"],
     },
     {
-      title: 'Corporate Website',
-      description: 'Responsive website with CMS integration.',
-      image: "../images/web-design.jpg",
-      link: '/work/corporate-website',
-      tags: ['Next.js', 'Tailwind']
+      title: "Cozy Nft",
+      description: "An NFT platform for buying and selling of NFT",
+      image: "../images/cozy.png",
+      link: "/portfolio",
+      tags: ["React.js", "Antd", "React Bootstrap"],
     },
     {
-      title: 'Healthcare Dashboard',
-      description: 'Data visualization for healthcare analytics.',
-      image: "../images/web-design.jpg",
-      link: '/work/healthcare-dashboard',
-      tags: ['D3.js', 'Python']
+      title: "Sire Printing",
+      description: "Sire Printing gives Packaging Services all over USA.",
+      image: "../images/sireprinting.png",
+      link: "/portfolio",
+      tags: ["Node.js", "React.js", "MongoDb", "Express.js"],
     },
     {
-      title: 'Social Media App',
-      description: 'Platform with real-time messaging features.',
-      image: "../images/web-design.jpg",
-      link: '/work/social-media-app',
-      tags: ['GraphQL', 'React']
-    }
+      title: "Digital Block Exchange",
+      description: "It Gives Services For Exchanging Your Currencies",
+      image: "../images/digital_block_exchange.png",
+      link: "/portfolio",
+      tags: ["React.js", "Antd", "React Bootstrap"],
+    },
+    {
+      title: "The Student",
+      description:
+        "THe Student Gives Information About Scholarships And Tests For Studying Abroad",
+      image: "../images/student.png",
+      link: "/portfolio",
+      tags: ["Node.js", "React.js", "MongoDb", "Express.js"],
+    },
+    {
+      title: "Brand Marketing Hub",
+      description:
+        "A Service Based Website That Gives Services of Web development,Web designing,Digital Marketing, Seo etc.",
+      image: "../images/bmh.png",
+      link: "/portfolio",
+      tags: ["React.js", "Antd", "React Bootstrap"],
+    },
   ];
 
   const nextSlide = () => {
-    setCurrentIndex(prev => (prev + 1) % projects.length);
+    setCurrentIndex((prev) => (prev + 1) % projects.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex(prev => (prev - 1 + projects.length) % projects.length);
+    setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
   const goToSlide = (index) => {
@@ -106,19 +122,25 @@ function LatestWork() {
                 <img
                   src={projects[currentIndex].image}
                   alt={projects[currentIndex].title}
-                  className="card-image"
+                  className="card-image-latest"
                   onError={(e) => {
-                    e.target.src = 'https://via.placeholder.com/800x500?text=Project+Image';
+                    e.target.src =
+                      "https://via.placeholder.com/800x500?text=Project+Image";
                   }}
                 />
-                <div className="image-overlay"></div>
               </div>
               <div className="card-content">
-                <h3 className="project-title">{projects[currentIndex].title}</h3>
-                <p className="project-description">{projects[currentIndex].description}</p>
+                <h3 className="project-title">
+                  {projects[currentIndex].title}
+                </h3>
+                <p className="project-description">
+                  {projects[currentIndex].description}
+                </p>
                 <div className="project-tags">
                   {projects[currentIndex].tags.map((tag, i) => (
-                    <span key={i} className="tag">{tag}</span>
+                    <span key={i} className="tag">
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -138,7 +160,7 @@ function LatestWork() {
           {projects.map((_, index) => (
             <button
               key={index}
-              className={`dot ${index === currentIndex ? 'active' : ''}`}
+              className={`dot ${index === currentIndex ? "active" : ""}`}
               onClick={() => goToSlide(index)}
               aria-label={`View project ${index + 1}`}
             />
