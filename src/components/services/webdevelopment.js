@@ -6,12 +6,11 @@ const Webdevelopment = () => {
   const mockupRef = useRef(null);
 
   useEffect(() => {
-    // Animation effect for features when they come into view
     const featureObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-feature");
+            entry.target.classList.add("dev-animate-feature");
           }
         });
       },
@@ -19,16 +18,15 @@ const Webdevelopment = () => {
     );
 
     if (featuresRef.current) {
-      const features = featuresRef.current.querySelectorAll(".feature");
+      const features = featuresRef.current.querySelectorAll(".dev-feature");
       features.forEach((feature) => featureObserver.observe(feature));
     }
 
-    // Animation for webdev mockup
     const mockupObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-webdev-mockup");
+            entry.target.classList.add("dev-animate-mockup");
           }
         });
       },
@@ -46,66 +44,70 @@ const Webdevelopment = () => {
   }, []);
 
   return (
-    <div className="webdev-service">
+    <div className="dev-service">
       {/* Hero Section */}
       <section className="dev-hero">
-        <div className="hero-content">
+        <div className="dev-hero-content">
           <h1>Expert Web Development Services</h1>
-          <p className="hero-subtitle">
-            High-performance, scalable web applications built with modern technologies to power your business
+          <p className="dev-hero-subtitle">
+            Delivering high-performance, scalable, and secure web applications
+            crafted with cutting-edge technologies to empower businesses and
+            drive digital success.
           </p>
-          <div className="cta-buttons">
-            <button className="primary-cta">Start Your Project</button>
-            <button className="secondary-cta">See My Work</button>
+          <div className="dev-cta-buttons">
+            <button className="dev-primary-cta">Launch Your Project</button>
+            <button className="dev-secondary-cta">Explore Our Portfolio</button>
           </div>
         </div>
-        <div className="hero-image" ref={mockupRef}>
-          <div className="webdev-mockup">
-            <div className="webdev-window">
-              <div className="webdev-header">
-                <div className="webdev-dots">
-                  <span className="red"></span>
-                  <span className="yellow"></span>
-                  <span className="green"></span>
+        <div className="dev-hero-image" ref={mockupRef}>
+          <div className="dev-mockup">
+            <div className="dev-window">
+              <div className="dev-header">
+                <div className="dev-dots">
+                  <span className="dev-dot-red"></span>
+                  <span className="dev-dot-yellow"></span>
+                  <span className="dev-dot-green"></span>
                 </div>
-                <div className="webdev-title">WebApp Dashboard</div>
-                <div className="webdev-actions">
-                  <span className="material-icons">minimize</span>
-                  <span className="material-icons">crop_square</span>
-                  <span className="material-icons">close</span>
+                <div className="dev-title">WebApp Dashboard</div>
+                <div className="dev-actions">
+                  <span className="dev-icon">minimize</span>
+                  <span className="dev-icon">crop_square</span>
+                  <span className="dev-icon">close</span>
                 </div>
               </div>
-              <div className="webdev-body">
-                <div className="webdev-sidebar">
-                  <div className="webdev-logo">WebApp</div>
-                  <nav className="webdev-nav">
-                    <a href="#dashboard" className="active">Dashboard</a>
+              <div className="dev-body">
+                <div className="dev-sidebar">
+                  <div className="dev-logo">WebApp</div>
+                  <nav className="dev-nav">
+                    <a href="#dashboard" className="dev-active">
+                      Dashboard
+                    </a>
                     <a href="#users">Users</a>
                     <a href="#analytics">Analytics</a>
                     <a href="#settings">Settings</a>
                   </nav>
                 </div>
-                <div className="webdev-main">
-                  <div className="webdev-content-header">
+                <div className="dev-main">
+                  <div className="dev-content-header">
                     <h2>Dashboard Overview</h2>
-                    <button className="webdev-action-btn">Add User</button>
+                    <button className="dev-action-btn">Add User</button>
                   </div>
-                  <div className="webdev-stats">
-                    <div className="webdev-stat-card">
+                  <div className="dev-stats">
+                    <div className="dev-stat-card">
                       <h3>Active Users</h3>
                       <p>1,245</p>
                     </div>
-                    <div className="webdev-stat-card">
+                    <div className="dev-stat-card">
                       <h3>Revenue</h3>
                       <p>$12,300</p>
                     </div>
-                    <div className="webdev-stat-card">
+                    <div className="dev-stat-card">
                       <h3>Engagement</h3>
                       <p>78%</p>
                     </div>
                   </div>
-                  <div className="webdev-chart">
-                    <div className="webdev-chart-placeholder">Analytics Chart</div>
+                  <div className="dev-chart">
+                    <div className="dev-chart-placeholder">Analytics Chart</div>
                   </div>
                 </div>
               </div>
@@ -115,93 +117,146 @@ const Webdevelopment = () => {
       </section>
 
       {/* Services Offered */}
-      <section className="services-offered">
-        <h2>My Web Development Services</h2>
-        <div className="services-grid">
-          <div className="service-card">
-            <div className="service-icon">🌐</div>
+      <section className="dev-services-offered">
+        <h2>Our Comprehensive Web Development Services</h2>
+        <p>
+          Our agency specializes in creating tailored web solutions that align
+          with your business goals, leveraging modern technologies to deliver
+          robust, user-friendly, and scalable applications.
+        </p>
+        <div className="dev-services-grid">
+          <div className="dev-service-card">
+            <div className="dev-service-icon">🌐</div>
             <h3>Frontend Development</h3>
-            <ul>
-              <li>React.js Applications</li>
-              <li>Next.js SSR Solutions</li>
-              <li>Responsive UI/UX</li>
-              <li>Interactive Web Apps</li>
+            <p>
+              Crafting visually stunning and highly interactive user interfaces
+              that enhance user experience and engagement across all devices.
+            </p>
+            <ul className="dev-service-list">
+              <li>React.js Single-Page Applications</li>
+              <li>Next.js for Server-Side Rendering</li>
+              <li>Responsive and Adaptive UI/UX Design</li>
+              <li>Interactive and Dynamic Web Applications</li>
+              <li>State Management with Redux or Context API</li>
             </ul>
           </div>
-          <div className="service-card">
-            <div className="service-icon">🔧</div>
+          <div className="dev-service-card">
+            <div className="dev-service-icon">🔧</div>
             <h3>Backend Development</h3>
-            <ul>
-              <li>Node.js & Express</li>
-              <li>RESTful APIs</li>
-              <li>Database Design</li>
-              <li>Authentication Systems</li>
+            <p>
+              Building secure, scalable, and efficient server-side solutions to
+              power your applications and handle complex business logic.
+            </p>
+            <ul className="dev-service-list">
+              <li>Node.js with Express for APIs</li>
+              <li>RESTful and GraphQL API Development</li>
+              <li>Database Design and Optimization</li>
+              <li>Secure Authentication and Authorization Systems</li>
+              <li>Microservices Architecture</li>
             </ul>
           </div>
-          <div className="service-card">
-            <div className="service-icon">🔄</div>
+          <div className="dev-service-card">
+            <div className="dev-service-icon">🔄</div>
             <h3>Full Stack Solutions</h3>
-            <ul>
-              <li>MERN Stack Applications</li>
-              <li>End-to-End Development</li>
-              <li>Third-party Integrations</li>
-              <li>Deployment & DevOps</li>
+            <p>
+              Providing end-to-end development services, from frontend
+              interfaces to backend infrastructure, ensuring seamless
+              integration and performance.
+            </p>
+            <ul className="dev-service-list">
+              <li>MERN Stack (MongoDB, Express, React, Node.js)</li>
+              <li>Complete End-to-End Development</li>
+              <li>Third-Party API Integrations</li>
+              <li>Cloud Deployment and DevOps Services</li>
+              <li>Continuous Integration and Delivery</li>
             </ul>
           </div>
         </div>
       </section>
 
       {/* Tech Stack */}
-      <section className="tech-stack-section">
-        <h2>My Technology Stack</h2>
-        <div className="tech-stack">
-          <div className="tech-category">
-            <h3>Frontend</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+      <section className="dev-tech-stack-section">
+        <h2>Our Advanced Technology Stack</h2>
+        <p>
+          Our agency leverages a robust set of tools and frameworks to deliver
+          cutting-edge web solutions that meet modern industry standards and
+          client expectations.
+        </p>
+        <div className="dev-tech-stack">
+          <div className="dev-tech-category">
+            <h3>Frontend Technologies</h3>
+            <div className="dev-tech-items">
+              <div className="dev-tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                  alt="React"
+                />
                 <span>React</span>
               </div>
-              <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" />
+              <div className="dev-tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                  alt="Next.js"
+                />
                 <span>Next.js</span>
               </div>
-              <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS" />
-                <span>Tailwind</span>
+              <div className="dev-tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+                  alt="Tailwind CSS"
+                />
+                <span>Tailwind CSS</span>
               </div>
             </div>
           </div>
-          <div className="tech-category">
-            <h3>Backend</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+          <div className="dev-tech-category">
+            <h3>Backend Technologies</h3>
+            <div className="dev-tech-items">
+              <div className="dev-tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                  alt="Node.js"
+                />
                 <span>Node.js</span>
               </div>
-              <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" />
+              <div className="dev-tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                  alt="Express"
+                />
                 <span>Express</span>
               </div>
-              <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+              <div className="dev-tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                  alt="MongoDB"
+                />
                 <span>MongoDB</span>
               </div>
             </div>
           </div>
-          <div className="tech-category">
-            <h3>Tools & Libraries</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+          <div className="dev-tech-category">
+            <h3>Development Tools & Libraries</h3>
+            <div className="dev-tech-items">
+              <div className="dev-tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  alt="Git"
+                />
                 <span>Git</span>
               </div>
-              <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux" />
+              <div className="dev-tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg"
+                  alt="Redux"
+                />
                 <span>Redux</span>
               </div>
-              <div className="tech-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+              <div className="dev-tech-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                  alt="Docker"
+                />
                 <span>Docker</span>
               </div>
             </div>
@@ -211,167 +266,220 @@ const Webdevelopment = () => {
 
       {/* Development Process */}
       <section className="dev-process">
-        <h2>My Development Process</h2>
-        <div className="process-timeline">
-          <div className="process-step">
-            <div className="step-number">1</div>
-            <div className="step-content">
+        <h2>Our Streamlined Development Process</h2>
+        <p>
+          Our agency follows a structured and collaborative approach to ensure
+          projects are delivered on time, within budget, and to the highest
+          quality standards, tailored to meet your unique business needs.
+        </p>
+        <div className="dev-process-timeline">
+          <div className="dev-process-step">
+            <div className="dev-step-number">1</div>
+            <div className="dev-step-content">
               <h3>Requirement Analysis</h3>
-              <p>Detailed discussion to understand your business needs and technical requirements.</p>
+              <p>
+                Conducting in-depth consultations to thoroughly understand your
+                business objectives, technical requirements, and target audience
+                to lay a solid foundation for the project.
+              </p>
             </div>
           </div>
-          <div className="process-step">
-            <div className="step-number">2</div>
-            <div className="step-content">
+          <div className="dev-process-step">
+            <div className="dev-step-number">2</div>
+            <div className="dev-step-content">
               <h3>Planning & Architecture</h3>
-              <p>System design, database schema, and technology stack selection.</p>
+              <p>
+                Designing a scalable system architecture, defining database
+                schemas, and selecting the optimal technology stack to ensure
+                long-term success and maintainability.
+              </p>
             </div>
           </div>
-          <div className="process-step">
-            <div className="step-number">3</div>
-            <div className="step-content">
+          <div className="dev-process-step">
+            <div className="dev-step-number">3</div>
+            <div className="dev-step-content">
               <h3>Development Phase</h3>
-              <p>Agile development with regular updates and milestone deliveries.</p>
+              <p>
+                Utilizing agile methodologies to develop the application,
+                providing regular updates, iterative feedback, and milestone
+                deliveries to keep the project on track.
+              </p>
             </div>
           </div>
-          <div className="process-step">
-            <div className="step-number">4</div>
-            <div className="step-content">
+          <div className="dev-process-step">
+            <div className="dev-step-number">4</div>
+            <div className="dev-step-content">
               <h3>Testing & Deployment</h3>
-              <p>Rigorous testing followed by deployment to production environment.</p>
+              <p>
+                Performing comprehensive testing, including unit, integration,
+                and performance tests, followed by seamless deployment to a
+                production environment with ongoing support.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Project Showcase */}
-      <section className="project-showcase" ref={featuresRef}>
-        <h2>My Development Approach</h2>
-        <div className="feature">
-          <div className="feature-content">
+      <section className="dev-project-showcase" ref={featuresRef}>
+        <h2>Our Development Approach</h2>
+        <p>
+          Our agency is committed to delivering high-quality, efficient, and
+          secure web applications through a disciplined development process that
+          prioritizes client satisfaction and technical excellence.
+        </p>
+        <div className="dev-feature">
+          <div className="dev-feature-content">
             <h3>Clean, Maintainable Code</h3>
             <p>
-              I follow best practices and coding standards to ensure your project is built with
-              clean, well-documented code that's easy to maintain and scale.
+              Our team adheres to industry best practices and coding standards
+              to produce clean, well-documented, and modular code that is easy
+              to maintain, extend, and scale as your business grows.
             </p>
-            <ul className="feature-list">
-              <li>Modular component structure</li>
-              <li>Proper code documentation</li>
-              <li>Consistent coding patterns</li>
-              <li>ES6+ JavaScript features</li>
+            <ul className="dev-feature-list">
+              <li>Modular and reusable component structures</li>
+              <li>Comprehensive code documentation</li>
+              <li>Consistent and standardized coding patterns</li>
+              <li>Leveraging modern ES6+ JavaScript features</li>
+              <li>Regular code reviews and refactoring</li>
             </ul>
           </div>
-          <div className="feature-image code-quality"></div>
+          <div className="dev-feature-image">
+            <img src="/images/code-quality.jpg" alt="Code Quality" />
+          </div>
         </div>
-        <div className="feature reverse">
-          <div className="feature-content">
+        <div className="dev-feature dev-reverse">
+          <div className="dev-feature-content">
             <h3>Performance Optimization</h3>
             <p>
-              Every application is optimized for speed and efficiency to provide
-              the best user experience.
+              Our applications are meticulously optimized to deliver
+              lightning-fast performance and exceptional user experiences,
+              ensuring your users stay engaged and satisfied.
             </p>
-            <ul className="feature-list">
-              <li>Code splitting & lazy loading</li>
-              <li>Efficient data fetching</li>
-              <li>Image optimization</li>
-              <li>Bundle size reduction</li>
+            <ul className="dev-feature-list">
+              <li>Code splitting and lazy loading for faster load times</li>
+              <li>Efficient data fetching and caching strategies</li>
+              <li>Image optimization and compression techniques</li>
+              <li>Bundle size reduction and minification</li>
+              <li>Server-side rendering for improved SEO</li>
             </ul>
           </div>
-          <div className="feature-image performance"></div>
+          <div className="dev-feature-image">
+            <img src="/images/performance.avif" alt="Performance" />
+          </div>
         </div>
-        <div className="feature">
-          <div className="feature-content">
+        <div className="dev-feature">
+          <div className="dev-feature-content">
             <h3>Security First</h3>
             <p>
-              Security is integrated at every level of development to protect your
-              application and user data.
+              Security is embedded into every layer of our development process
+              to safeguard your application and protect sensitive user data from
+              potential threats.
             </p>
-            <ul className="feature-list">
-              <li>Data validation & sanitization</li>
-              <li>Authentication best practices</li>
-              <li>Role-based access control</li>
-              <li>Regular dependency updates</li>
+            <ul className="dev-feature-list">
+              <li>Robust data validation and sanitization</li>
+              <li>Secure authentication and authorization protocols</li>
+              <li>Role-based access control implementation</li>
+              <li>Regular updates to dependencies and libraries</li>
+              <li>Proactive vulnerability scanning and mitigation</li>
             </ul>
           </div>
-          <div className="feature-image security"></div>
+          <div className="dev-feature-image">
+            <img src="/images/security.jpg" alt="Security" />
+          </div>
         </div>
       </section>
 
       {/* Pricing */}
-      <section className="pricing-section">
-        <h2>Development Packages</h2>
-        <div className="pricing-cards">
-          <div className="pricing-card">
+      <section className="dev-pricing-section">
+        <h2>Our Development Packages</h2>
+        <p>
+          Our agency offers flexible pricing packages designed to meet the needs
+          of businesses of all sizes, from startups to large enterprises, with
+          transparent pricing and comprehensive support.
+        </p>
+        <div className="dev-pricing-cards">
+          <div className="dev-pricing-card">
             <h3>Basic Development</h3>
-            <div className="price">$999+</div>
-            <ul className="features-list">
-              <li>Small business website</li>
-              <li>Up to 5 pages</li>
-              <li>Basic CMS integration</li>
-              <li>Contact form</li>
-              <li>1 month support</li>
+            <div className="dev-price">$999+</div>
+            <ul className="dev-features-list">
+              <li>Professional small business website</li>
+              <li>Up to 5 fully responsive pages</li>
+              <li>Basic CMS integration for content management</li>
+              <li>Custom contact form with validation</li>
+              <li>1 month of post-launch support</li>
+              <li>SEO optimization for better visibility</li>
             </ul>
-            <button className="pricing-cta">Get Quote</button>
+            <button className="dev-pricing-cta">Request a Quote</button>
           </div>
-          <div className="pricing-card recommended">
-            <div className="recommended-badge">Recommended</div>
+          <div className="dev-pricing-card dev-recommended">
+            <div className="dev-recommended-badge">Recommended</div>
             <h3>Web Application</h3>
-            <div className="price">$2,999+</div>
-            <ul className="features-list">
-              <li>Custom web application</li>
-              <li>User authentication</li>
-              <li>Database integration</li>
-              <li>Admin dashboard</li>
-              <li>3 months support</li>
-              <li>API development</li>
+            <div className="dev-price">$2,999+</div>
+            <ul className="dev-features-list">
+              <li>Custom-built web application</li>
+              <li>Secure user authentication system</li>
+              <li>Database integration and management</li>
+              <li>Custom admin dashboard for analytics</li>
+              <li>3 months of dedicated support</li>
+              <li>RESTful API development and integration</li>
+              <li>Basic performance optimization</li>
             </ul>
-            <button className="pricing-cta">Get Quote</button>
+            <button className="dev-pricing-cta">Request a Quote</button>
           </div>
-          <div className="pricing-card">
+          <div className="dev-pricing-card">
             <h3>Enterprise Solution</h3>
-            <div className="price">$5,999+</div>
-            <ul className="features-list">
-              <li>Complex web application</li>
-              <li>Scalable architecture</li>
-              <li>Advanced features</li>
-              <li>Third-party integrations</li>
-              <li>6 months support</li>
-              <li>Priority development</li>
+            <div className="dev-price">$5,999+</div>
+            <ul className="dev-features-list">
+              <li>Complex, scalable web application</li>
+              <li>Highly scalable cloud-based architecture</li>
+              <li>Advanced feature development</li>
+              <li>Seamless third-party integrations</li>
+              <li>6 months of priority support</li>
+              <li>Accelerated development timeline</li>
+              <li>Custom DevOps and CI/CD pipelines</li>
             </ul>
-            <button className="pricing-cta">Get Quote</button>
+            <button className="dev-pricing-cta">Request a Quote</button>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
       <section className="dev-testimonials">
-        <h2>Client Success Stories</h2>
-        <div className="testimonial-cards">
-          <div className="testimonial-card">
-            <div className="quote-icon">"</div>
-            <p className="testimonial-text">
-              The developer delivered our e-commerce platform ahead of schedule with
-              exceptional attention to detail. The React/Node.js architecture performs
-              flawlessly under heavy traffic.
+        <h2>Our Client Success Stories</h2>
+        <p>
+          Our agency takes pride in delivering transformative web solutions that
+          drive measurable results for our clients, as evidenced by their
+          feedback and success stories.
+        </p>
+        <div className="dev-testimonial-cards">
+          <div className="dev-testimonial-card">
+            <div className="dev-quote-icon">"</div>
+            <p className="dev-testimonial-text">
+              The agency delivered our e-commerce platform ahead of schedule
+              with remarkable attention to detail. The React and Node.js
+              architecture handles high traffic seamlessly, boosting our online
+              sales significantly.
             </p>
-            <div className="client-info">
-              <div className="client-avatar"></div>
-              <div className="client-details">
+            <div className="dev-client-info">
+              <div className="dev-client-avatar"></div>
+              <div className="dev-client-details">
                 <h4>Alex Rodriguez</h4>
                 <p>CTO, ShopNest</p>
               </div>
             </div>
           </div>
-          <div className="testimonial-card">
-            <div className="quote-icon">"</div>
-            <p className="testimonial-text">
-              Our custom CRM system transformed our business operations. The developer's
-              expertise in MongoDB and Express saved us thousands in licensing fees we'd
-              have spent on commercial software.
+          <div className="dev-testimonial-card">
+            <div className="dev-quote-icon">"</div>
+            <p className="dev-testimonial-text">
+              Our custom CRM system, built with MongoDB and Express,
+              revolutionized our business operations. The agency's expertise
+              saved us thousands in licensing fees compared to commercial
+              software alternatives.
             </p>
-            <div className="client-info">
-              <div className="client-avatar"></div>
-              <div className="client-details">
+            <div className="dev-client-info">
+              <div className="dev-client-avatar"></div>
+              <div className="dev-client-details">
                 <h4>Sarah Johnson</h4>
                 <p>CEO, BizSolutions</p>
               </div>
@@ -382,14 +490,17 @@ const Webdevelopment = () => {
 
       {/* Final CTA */}
       <section className="dev-final-cta">
-        <h2>Ready to Build Your Web Application?</h2>
+        <h2>Ready to Build Your Next Web Application?</h2>
         <p>
-          Let's discuss your project requirements and create a solution that drives
-          your business forward.
+          Partner with our agency to discuss your project requirements and
+          create a tailored, high-performance web solution that drives your
+          business forward and achieves your strategic goals.
         </p>
-        <div className="cta-buttons">
-          <button className="primary-cta">Get Free Consultation</button>
-          <button className="secondary-cta">View Portfolio</button>
+        <div className="dev-cta-buttons">
+          <button className="dev-primary-cta">
+            Schedule a Free Consultation
+          </button>
+          <button className="dev-secondary-cta">Explore Our Portfolio</button>
         </div>
       </section>
     </div>

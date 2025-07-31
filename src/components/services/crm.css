@@ -456,7 +456,7 @@ button {
 
 /* Material Icons */
 .material-icons {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   font-size: clamp(16px, 2.5vw, 20px);
@@ -467,7 +467,7 @@ button {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
+  -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
 
@@ -951,7 +951,166 @@ button {
 .crm-final-cta .secondary-cta:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+.trust-badges {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
 
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.badge img {
+  width: 24px;
+  height: 24px;
+}
+
+.dashboard-image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-image:hover {
+  transform: scale(1.02);
+}
+
+/* Section Intro Styles */
+.section-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Benefit Card Enhancements */
+.benefit-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat-item {
+  background: rgba(66, 153, 225, 0.1);
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c5282;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #4a5568;
+  display: block;
+}
+
+/* Feature Card Enhancements */
+.feature-icon {
+  margin-bottom: 1rem;
+}
+
+.feature-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Tech Stack Enhancements */
+.tech-desc {
+  font-size: 0.8rem;
+  color: #4a5568;
+  margin-top: 0.5rem;
+}
+
+/* Type Card Enhancements */
+.type-icon {
+  margin-bottom: 1rem;
+}
+
+.type-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.type-stats {
+  margin-top: 1.5rem;
+}
+
+/* Pricing Section Enhancements */
+.included-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.included-features span {
+  background: #ebf8ff;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+}
+
+.price-desc {
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.custom-solution {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: #f7fafc;
+  border-radius: 12px;
+}
+
+/* Case Study Enhancements */
+.study-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.client-quote {
+  background: #f7fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+/* Final CTA Enhancements */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .crm-hero {
@@ -1014,10 +1173,17 @@ button {
     margin-left: 0;
     margin-top: 1rem;
   }
+  .benefit-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .included-features {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 480px) {
-
   .benefits-grid,
   .features-grid,
   .types-grid,

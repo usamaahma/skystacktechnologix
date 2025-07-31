@@ -413,10 +413,163 @@ button {
   color: var(--sky-blue);
   margin-bottom: 2rem;
 }
+.di-hero-dashboard {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
 
+.di-hero-dashboard:hover {
+  transform: scale(1.02);
+}
+
+.di-trusted-by {
+  margin-top: 2rem;
+}
+
+.di-trusted-by p {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.di-brand-logos {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.di-brand-logos img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.di-brand-logos img:hover {
+  opacity: 1;
+}
+
+/* Service Card Enhancements */
+.di-service-icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.di-service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.di-service-card li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.di-service-card li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+}
+
+.di-service-stats {
+  margin-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+}
+
+.di-stat {
+  text-align: center;
+}
+
+.di-stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.di-stat-label {
+  font-size: 0.8rem;
+  color: #4a5568;
+}
+
+/* Results Section Enhancements */
+.di-results-highlights {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.di-highlight-card {
+  background: rgba(30, 58, 138, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.di-highlight-card img {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+/* Process Section Enhancements */
+.di-step-image {
+  margin-bottom: 1.5rem;
+}
+
+.di-step-image img {
+  width: 100%;
+  border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Testimonial Enhancements */
+.di-client-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.di-more-case-studies {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* CTA Section Enhancements */
+.di-contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.di-contact-method {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.di-contact-method img {
+  width: 20px;
+  height: 20px;
+}
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-
   .di-hero-container,
   .di-results-container {
     flex-direction: column;
@@ -450,10 +603,20 @@ button {
   .di-results-stats {
     grid-template-columns: 1fr;
   }
+  .di-results-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .di-brand-logos {
+    flex-wrap: wrap;
+  }
+
+  .di-service-card ul li {
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
-
   .di-services-grid,
   .di-testimonials-grid {
     grid-template-columns: 1fr;

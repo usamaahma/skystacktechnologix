@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./mobileapp.css";
+import { Link } from "react-router-dom";
 
 const MobileApp = () => {
   const featuresRef = useRef(null);
@@ -56,8 +57,14 @@ const MobileApp = () => {
             exceptional user experiences
           </p>
           <div className="cta-buttons">
-            <button className="primary-cta">Start Your App Project</button>
-            <button className="secondary-cta">See App Portfolio</button>
+            <Link to="/contactus">
+              {" "}
+              <button className="primary-cta">Start Your App Project</button>
+            </Link>
+            <Link to="/portfolio">
+              {" "}
+              <button className="secondary-cta">See App Portfolio</button>
+            </Link>
           </div>
         </div>
         <div className="hero-image" ref={phoneMockupRef}>
@@ -86,7 +93,10 @@ const MobileApp = () => {
                           <span>Users</span>
                           <strong>1,240</strong>
                         </div>
-
+                        <div className="stat-item">
+                          <span>Revenue</span>
+                          <strong>$3,850</strong>
+                        </div>
                       </div>
                     </div>
                     <div className="app-nav">
@@ -105,10 +115,17 @@ const MobileApp = () => {
 
       {/* Services Offered */}
       <section className="services-offered">
-        <h2>My Mobile App Services</h2>
+        <h2>Our Mobile App Services</h2>
         <div className="services-grid">
           <div className="service-card">
-            <div className="service-icon">📱</div>
+            <div className="service-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/919/919853.png"
+                alt="Cross-platform"
+                width="60"
+                height="60"
+              />
+            </div>
             <h3>Cross-Platform Apps</h3>
             <ul>
               <li>React Native Development</li>
@@ -118,7 +135,14 @@ const MobileApp = () => {
             </ul>
           </div>
           <div className="service-card">
-            <div className="service-icon">🤖</div>
+            <div className="service-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/226/226770.png"
+                alt="Android"
+                width="60"
+                height="60"
+              />
+            </div>
             <h3>Native Android Apps</h3>
             <ul>
               <li>Kotlin/Java Development</li>
@@ -128,7 +152,14 @@ const MobileApp = () => {
             </ul>
           </div>
           <div className="service-card">
-            <div className="service-icon">🔄</div>
+            <div className="service-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
+                alt="Maintenance"
+                width="60"
+                height="60"
+              />
+            </div>
             <h3>App Maintenance</h3>
             <ul>
               <li>Bug fixes & updates</li>
@@ -142,7 +173,7 @@ const MobileApp = () => {
 
       {/* Tech Stack */}
       <section className="tech-stack-section">
-        <h2>My Mobile Development Stack</h2>
+        <h2>Our Mobile Development Stack</h2>
         <div className="tech-stack">
           <div className="tech-category">
             <h3>Cross-Platform</h3>
@@ -151,6 +182,8 @@ const MobileApp = () => {
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
                   alt="React Native"
+                  width="50"
+                  height="50"
                 />
                 <span>React Native</span>
               </div>
@@ -158,6 +191,8 @@ const MobileApp = () => {
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
                   alt="JavaScript"
+                  width="50"
+                  height="50"
                 />
                 <span>JavaScript</span>
               </div>
@@ -165,6 +200,8 @@ const MobileApp = () => {
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
                   alt="TypeScript"
+                  width="50"
+                  height="50"
                 />
                 <span>TypeScript</span>
               </div>
@@ -177,6 +214,8 @@ const MobileApp = () => {
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg"
                   alt="Android"
+                  width="50"
+                  height="50"
                 />
                 <span>Android</span>
               </div>
@@ -184,6 +223,8 @@ const MobileApp = () => {
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
                   alt="Kotlin"
+                  width="50"
+                  height="50"
                 />
                 <span>Kotlin</span>
               </div>
@@ -191,6 +232,8 @@ const MobileApp = () => {
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
                   alt="Java"
+                  width="50"
+                  height="50"
                 />
                 <span>Java</span>
               </div>
@@ -203,6 +246,8 @@ const MobileApp = () => {
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
                   alt="Firebase"
+                  width="50"
+                  height="50"
                 />
                 <span>Firebase</span>
               </div>
@@ -210,6 +255,8 @@ const MobileApp = () => {
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg"
                   alt="Redux"
+                  width="50"
+                  height="50"
                 />
                 <span>Redux</span>
               </div>
@@ -217,6 +264,8 @@ const MobileApp = () => {
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
                   alt="Node.js"
+                  width="50"
+                  height="50"
                 />
                 <span>Node.js</span>
               </div>
@@ -227,7 +276,7 @@ const MobileApp = () => {
 
       {/* Development Process */}
       <section className="dev-process">
-        <h2>My App Development Process</h2>
+        <h2>Our App Development Process</h2>
         <div className="process-steps">
           <div className="step">
             <div className="step-number">1</div>
@@ -272,12 +321,12 @@ const MobileApp = () => {
 
       {/* Feature Showcase */}
       <section className="features-showcase" ref={featuresRef}>
-        <h2>Why Choose My App Development</h2>
+        <h2>Why Choose Our App Development</h2>
         <div className="feature">
           <div className="feature-content">
             <h3>Cross-Platform Expertise</h3>
             <p>
-              Build once, run anywhere. My React Native expertise delivers
+              Build once, run anywhere. Our React Native expertise delivers
               native-like performance across iOS and Android with a single
               codebase.
             </p>
@@ -288,7 +337,13 @@ const MobileApp = () => {
               <li>Faster development cycle</li>
             </ul>
           </div>
-          <div className="feature-image cross-platform"></div>
+          <div className="feature-image">
+            <img
+              src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+              alt="Cross-platform development"
+              className="feature-img"
+            />
+          </div>
         </div>
         <div className="feature reverse">
           <div className="feature-content">
@@ -304,7 +359,13 @@ const MobileApp = () => {
               <li>Material Design implementation</li>
             </ul>
           </div>
-          <div className="feature-image native-android"></div>
+          <div className="feature-image">
+            <img
+              src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+              alt="Native Android development"
+              className="feature-img"
+            />
+          </div>
         </div>
         <div className="feature">
           <div className="feature-content">
@@ -320,7 +381,13 @@ const MobileApp = () => {
               <li>Authentication systems</li>
             </ul>
           </div>
-          <div className="feature-image backend"></div>
+          <div className="feature-image">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+              alt="Backend integration"
+              className="feature-img"
+            />
+          </div>
         </div>
       </section>
 
@@ -338,7 +405,10 @@ const MobileApp = () => {
               <li>1 platform (iOS or Android)</li>
               <li>1 month support</li>
             </ul>
-            <button className="pricing-cta">Get Quote</button>
+            <Link to="/contactus">
+              {" "}
+              <button className="pricing-cta">Get Quote</button>
+            </Link>
           </div>
           <div className="pricing-card recommended">
             <div className="recommended-badge">Most Popular</div>
@@ -352,7 +422,9 @@ const MobileApp = () => {
               <li>3 months support</li>
               <li>App store deployment</li>
             </ul>
-            <button className="pricing-cta">Get Quote</button>
+            <Link to="/contactus">
+              <button className="pricing-cta">Get Quote</button>
+            </Link>
           </div>
           <div className="pricing-card">
             <h3>Enterprise Solution</h3>
@@ -365,7 +437,9 @@ const MobileApp = () => {
               <li>6 months support</li>
               <li>Priority development</li>
             </ul>
-            <button className="pricing-cta">Get Quote</button>
+            <Link to="/contactus">
+              <button className="pricing-cta">Get Quote</button>
+            </Link>
           </div>
         </div>
       </section>
@@ -382,7 +456,12 @@ const MobileApp = () => {
               expertise saved us thousands in development costs.
             </p>
             <div className="client-info">
-              <div className="client-avatar"></div>
+              <div className="client-avatar">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="Michael Tan"
+                />
+              </div>
               <div className="client-details">
                 <h4>Michael Tan</h4>
                 <p>CEO, DeliveryExpress</p>
@@ -397,7 +476,12 @@ const MobileApp = () => {
               guidelines and smooth animations made our product stand out.
             </p>
             <div className="client-info">
-              <div className="client-avatar"></div>
+              <div className="client-avatar">
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt="Sarah Johnson"
+                />
+              </div>
               <div className="client-details">
                 <h4>Sarah Johnson</h4>
                 <p>Product Manager, HealthTrack</p>
@@ -415,8 +499,12 @@ const MobileApp = () => {
           users and grows your business.
         </p>
         <div className="cta-buttons">
-          <button className="primary-cta">Get Free Consultation</button>
-          <button className="secondary-cta">View App Portfolio</button>
+          <Link to="/contactus">
+            <button className="primary-cta">Get Free Consultation</button>
+          </Link>
+          <Link to="/portfolio">
+            <button className="secondary-cta">View App Portfolio</button>
+          </Link>
         </div>
       </section>
     </div>

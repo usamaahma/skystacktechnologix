@@ -1,6 +1,6 @@
 /* Base Styles */
 .mobileapp-service {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #2d3748;
   line-height: 1.6;
   overflow-x: hidden;
@@ -29,7 +29,7 @@ h2 {
 }
 
 h2::after {
-  content: '';
+  content: "";
   display: block;
   width: 80px;
   height: 4px;
@@ -83,7 +83,7 @@ button {
 .app-hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly !important;
   padding: clamp(2rem, 5vw, 4rem) 2rem;
   background: linear-gradient(135deg, #ffffff 0%, #ebf8ff 100%);
   min-height: 80vh;
@@ -141,7 +141,8 @@ button {
   border-radius: 40px;
   position: relative;
   background: linear-gradient(145deg, #1a3a6e 0%, #2c5282 100%);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -366,7 +367,7 @@ button {
 
 /* Material Icons */
 .material-icons {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   font-size: clamp(16px, 2.5vw, 20px);
@@ -377,7 +378,7 @@ button {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
+  -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
 
@@ -427,7 +428,7 @@ button {
 }
 
 .service-card li::before {
-  content: '•';
+  content: "•";
   position: absolute;
   left: 0;
   color: #63b3ed;
@@ -569,7 +570,6 @@ button {
   transform: translateX(-50px);
 }
 
-
 .cross-platform {
   background: linear-gradient(45deg, #4299e1 0%, #3182ce 100%);
 }
@@ -595,7 +595,7 @@ button {
 }
 
 .feature-list li::before {
-  content: '✓';
+  content: "✓";
   position: absolute;
   left: 0;
   color: #2b6cb0;
@@ -680,7 +680,7 @@ button {
 }
 
 .features-list li::before {
-  content: '✓';
+  content: "✓";
   position: absolute;
   left: 0;
   color: #2b6cb0;
@@ -789,7 +789,43 @@ button {
 .app-final-cta .secondary-cta:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+.service-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
 
+.feature-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 300px;
+}
+
+.feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.feature:hover .feature-img {
+  transform: scale(1.05);
+}
+
+.client-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Tech icons */
+.tech-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .app-hero {
