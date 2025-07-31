@@ -1,0 +1,129 @@
+/* Base Styles */
+.cards-section {
+  padding: 2rem 1rem;
+  background-color: #f8fafc;
+}
+
+.cards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.card {
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.card-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.card-unit {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2563eb;
+}
+
+/* Small Devices (up to 576px) */
+@media (max-width: 576px) {
+  .cards-section {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .cards-container {
+    gap: 0.75rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-value {
+    font-size: 1.5rem;
+  }
+
+  .card-unit {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet Devices (577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .card-title {
+    font-size: 1.125rem;
+  }
+
+  .card-value {
+    font-size: 1.75rem;
+  }
+
+  .card-unit {
+    font-size: 1.25rem;
+  }
+}
+
+/* Desktop Devices (769px and above) */
+@media (min-width: 769px) {
+  .cards-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-value {
+    font-size: 2.25rem;
+  }
+
+  .card-unit {
+    font-size: 1.75rem;
+  }
+}

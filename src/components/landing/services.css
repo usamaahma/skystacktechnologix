@@ -1,0 +1,194 @@
+/* Font Imports (reused from about page for consistency) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Color Variables (aligned with portfolio and about page) */
+:root {
+    --primary: #1e88e5;
+    --primary-dark: #0a2a57;
+    --primary-light: #e6f0ff;
+    --secondary: #268ce5;
+    --dark: #0a2a57;
+    --light: #f5f9ff;
+    --gray: #4a6b8a;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+/* Services Section */
+.service-services-section {
+    padding: 5rem 0;
+    /* Matches portfolio's section padding */
+    background: linear-gradient(135deg, var(--light), var(--primary-light));
+    /* Matches portfolio's gradient */
+    font-family: "Poppins", sans-serif;
+    /* Matches about page */
+}
+
+/* Services Heading */
+.service-services-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    /* Matches portfolio */
+    font-size: 2.5rem;
+    /* Matches portfolio's section-title */
+    color: var(--dark);
+    /* Matches portfolio */
+    font-weight: 700;
+    /* Matches portfolio */
+}
+
+/* Services Grid */
+.service-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    /* Matches portfolio's grid */
+    gap: 2rem;
+    /* Matches portfolio */
+    max-width: 1200px;
+    /* Matches portfolio's container */
+    margin: 0 auto;
+}
+
+/* Service Card */
+.service-service-card {
+    position: relative;
+    border-radius: 10px;
+    /* Matches portfolio */
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    /* Matches portfolio */
+    cursor: pointer;
+    min-height: 350px;
+    /* Retained for layout */
+    transition: var(--transition);
+    /* Matches portfolio */
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    /* Matches portfolio's card background */
+}
+
+.service-service-card:hover {
+    transform: translateY(-10px);
+    /* Matches portfolio's hover effect */
+    box-shadow: 0 15px 40px rgba(30, 136, 229, 0.2);
+    /* Matches portfolio's hover shadow */
+}
+
+/* Video Container */
+.service-video-container {
+    flex: 1;
+    width: 100%;
+    height: 200px;
+    /* Matches portfolio's card-image height */
+}
+
+/* Service Video */
+.service-service-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #000;
+    /* Retained for video fallback */
+    transition: transform 0.5s ease;
+    /* Matches portfolio's image transition */
+}
+
+.service-service-card:hover .service-service-video {
+    transform: scale(1.05);
+    /* Matches portfolio's image hover effect */
+}
+
+/* Service Overlay */
+.service-service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Center text horizontally */
+    padding: 1.5rem;
+    /* Matches portfolio's card padding */
+    opacity: 0;
+    /* Hidden by default */
+    transition: var(--transition);
+    /* Matches portfolio */
+    background: transparent;
+    /* No background initially */
+}
+
+/* Hover State for Overlay */
+.service-service-card:hover .service-service-overlay {
+    opacity: 1;
+    /* Fully visible on hover */
+    background: rgba(255, 255, 255, 0.9);
+    /* White semi-transparent background for text readability */
+    border-radius: 10px;
+    /* Matches card border-radius */
+}
+
+/* Service Title */
+.service-service-title {
+    font-size: 1.2rem;
+    /* Matches portfolio's card title */
+    margin-bottom: 0.5rem;
+    /* Matches portfolio */
+    color: var(--dark);
+    /* Dark text for contrast on white background */
+    font-weight: 600;
+    /* Matches portfolio */
+    text-align: center;
+    /* Center text */
+}
+
+/* Service Description */
+.service-service-description {
+    font-size: 0.9rem;
+    /* Matches portfolio's smaller text */
+    line-height: 1.6;
+    /* Matches portfolio */
+    color: var(--gray);
+    /* Gray for readability on white background */
+    text-align: center;
+    /* Center text */
+}
+
+/* Focus State */
+.service-service-card:focus {
+    outline: 3px solid var(--secondary);
+    /* Matches theme */
+    outline-offset: 3px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .service-services-section {
+        padding: 3rem 0;
+        /* Matches portfolio's responsive padding */
+    }
+
+    .service-services-heading {
+        font-size: 2rem;
+        /* Matches portfolio's responsive title */
+    }
+
+    .service-services-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        /* Matches portfolio's responsive grid */
+    }
+
+    .service-service-title {
+        font-size: 1.1rem;
+        /* Adjusted for smaller screens */
+    }
+
+    .service-service-description {
+        font-size: 0.85rem;
+        /* Adjusted for readability */
+    }
+}
