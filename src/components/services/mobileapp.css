@@ -569,10 +569,6 @@ button {
   transform: translateX(-50px);
 }
 
-.feature.animate-feature .feature-image {
-  opacity: 0.8;
-  transform: translateX(0);
-}
 
 .cross-platform {
   background: linear-gradient(45deg, #4299e1 0%, #3182ce 100%);

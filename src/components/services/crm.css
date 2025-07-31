@@ -670,7 +670,7 @@ button {
 }
 
 .feature.animate-feature .feature-image {
-  opacity: 0.8;
+  opacity: 1;
   transform: translateX(0);
 }
 

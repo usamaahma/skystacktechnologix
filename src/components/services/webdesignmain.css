@@ -314,7 +314,7 @@ button {
 
 /* Material Icons */
 .material-icons {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   font-size: clamp(16px, 2.5vw, 20px);
@@ -325,7 +325,7 @@ button {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
+  -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
 
@@ -470,44 +470,41 @@ button {
 
 .feature-image {
   flex: 1;
-  height: 300px;
+  width: 100%; /* Full width */
   border-radius: 8px;
-  background: #87ceeb;
-  opacity: 0;
-  transform: translateX(50px);
-  transition: all 0.6s ease;
+  background: #87ceeb; /* Fallback color */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: 600;
   font-size: 1.2rem;
+  min-height: 600px;
 }
 
 .feature.reverse .feature-image {
   transform: translateX(-50px);
 }
 
-.feature.animate-feature .feature-image {
-  opacity: 0.8;
-  transform: translateX(0);
-}
-
 .mobile-design {
-  background:
-    linear-gradient(45deg, #1a3a6e 0%, #87ceeb 100%),
-    url('../../../public/images/mobile-responsive.jpg');
+  background: url("../../../public/images/mobile-responsive.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .seo-optimized {
-  background: linear-gradient(45deg, #1a3a6e 0%, #4a90e2 100%);
+  background: url("../../../public/images/seo-optimized.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .animations {
-  background: linear-gradient(45deg, #87ceeb 0%, #1a3a6e 100%);
+  background: url("../../../public/images/custom-animation.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Pricing */
@@ -767,7 +764,6 @@ button {
 }
 
 @media (max-width: 480px) {
-
   .benefits-grid,
   .tech-stack,
   .pricing-cards,

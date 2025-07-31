@@ -308,7 +308,7 @@ button {
 
 /* Material Icons */
 .material-icons {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   font-size: clamp(16px, 2.5vw, 20px);
@@ -319,7 +319,7 @@ button {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
+  -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
 
@@ -515,22 +515,39 @@ button {
 .feature.reverse .feature-image {
   transform: translateX(-50px);
 }
-
-.feature.animate-feature .feature-image {
-  opacity: 0.8;
-  transform: translateX(0);
+.feature-image {
+  flex: 1;
+  width: 100%; /* Full width */
+  border-radius: 8px;
+  background: #87ceeb; /* Fallback color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  min-height: 600px;
 }
 
 .code-quality {
-  background: linear-gradient(45deg, #1a3a6e 0%, #87ceeb 100%);
+  background: url("../../../public/images/code-quality.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .performance {
-  background: linear-gradient(45deg, #87ceeb 0%, #1a3a6e 100%);
+  background: url("../../../public/images/performance.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .security {
-  background: linear-gradient(45deg, #1a3a6e 0%, #4a90e2 100%);
+  background: url("../../../public/images/security.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .feature-list {
@@ -828,7 +845,6 @@ button {
 }
 
 @media (max-width: 480px) {
-
   .services-grid,
   .tech-stack,
   .pricing-cards,
