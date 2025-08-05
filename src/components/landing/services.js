@@ -40,7 +40,7 @@ function Services() {
             title: 'CRM Solutions',
             description: 'Implementing robust CRM systems to streamline customer relationships and enhance business efficiency.',
             video: vid5,
-            link: '/services/crm-solutions'
+            link: '/crm'
         }
     ];
 
