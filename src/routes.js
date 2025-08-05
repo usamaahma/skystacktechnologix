@@ -9,6 +9,7 @@ import CRM from "./components/services/crm";
 import DigitalMarketing from "./components/services/digitalmarketing";
 import Webdesign1 from "./components/services/webdesignmain";
 import Portfolio from "./components/portfolio/portfolio";
+import Thankyou from "./components/Thankyou";
 // import NotFound from './components/NotFound';
 
 const AppRoutes = () => {
@@ -23,6 +24,7 @@ const AppRoutes = () => {
       <Route path="/crm" element={<CRM />} />
       <Route path="/digital-marketing" element={<DigitalMarketing />} />
       <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/thank-you" element={<Thankyou />} />
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
   );

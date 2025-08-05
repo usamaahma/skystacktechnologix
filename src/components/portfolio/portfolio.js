@@ -1,5 +1,6 @@
 import React from "react";
 import "./portfolio.css";
+import { Link } from "react-router-dom";
 
 function Portfolio() {
   const projects = [
@@ -82,7 +83,7 @@ function Portfolio() {
           <p style={{ color: "white" }}>
             Let's create something extraordinary together
           </p>
-          <button className="cta-button">Start Your Project Today</button>
+          <Link to="/contactus"><button className="cta-button">Start Your Project Today</button></Link>
         </div>
       </div>
     </section>
