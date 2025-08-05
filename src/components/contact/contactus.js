@@ -1,69 +1,37 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "./contactus.css";
 
 function Contactus() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
-
-  const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    // Clear error when user types
-    if (errors[name]) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: "",
-      }));
-    }
-  };
-
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Email is invalid";
-    }
-    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
-    if (!formData.message.trim()) newErrors.message = "Message is required";
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) {
-      setIsSubmitting(true);
-      // Simulate API call
-      setTimeout(() => {
-        console.log("Form submitted:", formData);
-        setIsSubmitting(false);
+    setIsSubmitting(true);
+    const form = e.target;
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+      });
+
+      if (response.ok) {
         setSubmitSuccess(true);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-        });
-        // Hide success message after 5 seconds
-        setTimeout(() => setSubmitSuccess(false), 5000);
-      }, 1500);
+        form.reset();
+
+        // Redirect to thank-you page after 2 seconds
+        setTimeout(() => {
+          navigate("/thank-you");
+        }, 2000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -84,26 +52,28 @@ function Contactus() {
               {submitSuccess && (
                 <div className="success-message">
                   <i className="fas fa-check-circle"></i>
-                  <span>
-                    Thank you! Your message has been sent successfully.
-                  </span>
+                  <span>Thank you! You will be contacted soon.</span>
                 </div>
               )}
-              <form onSubmit={handleSubmit} className="contact-form">
+              <form
+                action="https://formsubmit.co/skystacktechnologiz@gmail.com"
+                method="POST"
+                className="contact-form"
+                onSubmit={handleSubmit}
+              >
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_subject" value="New Contact Form Submission" />
+
                 <div className="form-group">
                   <label htmlFor="name">Full Name*</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className={errors.name ? "error" : ""}
+                    required
                     placeholder="Enter your name"
                   />
-                  {errors.name && (
-                    <span className="error-message">{errors.name}</span>
-                  )}
                 </div>
 
                 <div className="form-group">
@@ -112,14 +82,9 @@ function Contactus() {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={errors.email ? "error" : ""}
+                    required
                     placeholder="Enter your email"
                   />
-                  {errors.email && (
-                    <span className="error-message">{errors.email}</span>
-                  )}
                 </div>
 
                 <div className="form-group">
@@ -128,8 +93,6 @@ function Contactus() {
                     type="tel"
                     id="phone"
                     name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -140,14 +103,9 @@ function Contactus() {
                     type="text"
                     id="subject"
                     name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className={errors.subject ? "error" : ""}
+                    required
                     placeholder="What's this about?"
                   />
-                  {errors.subject && (
-                    <span className="error-message">{errors.subject}</span>
-                  )}
                 </div>
 
                 <div className="form-group">
@@ -155,15 +113,10 @@ function Contactus() {
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className={errors.message ? "error" : ""}
+                    required
                     rows="5"
                     placeholder="How can we help you?"
                   ></textarea>
-                  {errors.message && (
-                    <span className="error-message">{errors.message}</span>
-                  )}
                 </div>
 
                 <motion.button
@@ -204,7 +157,8 @@ function Contactus() {
                 </div>
                 <div className="info-content">
                   <h3>Our Office</h3>
-                  <p>123 Tech Street, Sydney NSW 2000, Australia</p>
+                  <p>Office # 1022, Third Floor، Siddique Trade Center, Main
+                    Boulevard Gulberg, Block H Gulberg 2, Lahore, 54660</p>
                 </div>
               </div>
 
@@ -214,8 +168,7 @@ function Contactus() {
                 </div>
                 <div className="info-content">
                   <h3>Email Us</h3>
-                  <p>info@skystacktech.com</p>
-                  <p>support@skystacktech.com</p>
+                  <p>skystacktechnologiz@gmail.com</p>
                 </div>
               </div>
 
@@ -225,8 +178,9 @@ function Contactus() {
                 </div>
                 <div className="info-content">
                   <h3>Call Us</h3>
-                  <p>+61 2 1234 5678</p>
-                  <p>+61 400 123 456</p>
+                  <a href="tel:+923088798324" className="contact-link">
+                    <span>+92 308 8798324</span>
+                  </a>
                 </div>
               </div>
 
@@ -259,7 +213,7 @@ function Contactus() {
           <div className="map-container">
             <iframe
               title="Our Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3399.4955006201913!2d74.40024197463744!3d31.56545734491484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190555d2be0ea1%3A0x7148c4b475b095ed!2sNaya%20pull%2C%2018%207Muslimabad%20Bazar%2C%20Ghazi%20Pul%20Muslimabad%20Tajpura%2C%20Lahore%2C%20Pakistan!5e0!3m2!1sen!2s!4v1750765056491!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.7411334294743!2d74.352699!3d31.5312691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904e4a8584f6d%3A0x30f2072f483cf709!2sSiddique%20Centre%2C%20Jail%20Rd%2C%20Block%20H%20Gulberg%202%2C%20Lahore!5e0!3m2!1sen!2s!4v1754421702780!5m2!1sen!2s"
               width="100%"
               height="450"
               style={{ border: 0 }}
