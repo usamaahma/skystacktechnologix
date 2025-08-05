@@ -150,18 +150,6 @@ function Contactus() {
                 Fill out the form or reach out to us through other channels
                 listed below
               </p>
-
-              <div className="info-card">
-                <div className="info-icon">
-                  <i className="fas fa-map-marker-alt"></i>
-                </div>
-                <div className="info-content">
-                  <h3>Our Office</h3>
-                  <p>Office # 1022, Third Floor، Siddique Trade Center, Main
-                    Boulevard Gulberg, Block H Gulberg 2, Lahore, 54660</p>
-                </div>
-              </div>
-
               <div className="info-card">
                 <div className="info-icon">
                   <i className="fas fa-envelope"></i>
@@ -183,6 +171,19 @@ function Contactus() {
                   </a>
                 </div>
               </div>
+              <div className="info-card">
+                <div className="info-icon">
+                  <i className="fas fa-map-marker-alt"></i>
+                </div>
+
+                <div className="info-content">
+                  <h3>Our Office</h3>
+                  <p>Office # 1022, Third Floor، Siddique Trade Center, Main
+                    Boulevard Gulberg, Block H Gulberg 2, Lahore, 54660</p>
+                </div>
+              </div>
+
+
 
               <div className="social-links">
                 <h3>Follow Us</h3>
