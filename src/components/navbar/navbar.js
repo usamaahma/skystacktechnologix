@@ -67,9 +67,8 @@ function Navbar() {
             </NavLink>
 
             <div
-              className={`nav-dropdown ${
-                activeDropdown === "services" ? "active" : ""
-              }`}
+              className={`nav-dropdown ${activeDropdown === "services" ? "active" : ""
+                }`}
             >
               <button
                 className="nav-link dropdown-toggle"
@@ -187,19 +186,17 @@ function Navbar() {
               Services{" "}
               <FontAwesomeIcon
                 icon={faChevronDown}
-                className={`dropdown-icon ${
-                  activeMobileDropdown === "services" ? "active" : ""
-                }`}
+                className={`dropdown-icon ${activeMobileDropdown === "services" ? "active" : ""
+                  }`}
               />
             </button>
             <div
-              className={`dropdown-menu ${
-                activeMobileDropdown === "services" ? "active" : ""
-              }`}
+              className={`mobile-dropdown-menu ${activeMobileDropdown === "services" ? "active" : ""
+                }`}
             >
               <NavLink
                 to="/web-design"
-                className="dropdown-item"
+                className="mobile-dropdown-item"
                 activeClassName="active"
                 onClick={toggleMobileMenu}
               >
@@ -207,7 +204,7 @@ function Navbar() {
               </NavLink>
               <NavLink
                 to="/web-development"
-                className="dropdown-item"
+                className="mobile-dropdown-item"
                 activeClassName="active"
                 onClick={toggleMobileMenu}
               >
@@ -215,15 +212,23 @@ function Navbar() {
               </NavLink>
               <NavLink
                 to="/mobile-app-development"
-                className="dropdown-item"
+                className="mobile-dropdown-item"
                 activeClassName="active"
                 onClick={toggleMobileMenu}
               >
                 Mobile App Development
               </NavLink>
               <NavLink
+                to="/crm"
+                className="mobile-dropdown-item"
+                activeClassName="active"
+                onClick={toggleMobileMenu}
+              >
+                CRM
+              </NavLink>
+              <NavLink
                 to="/digital-marketing"
-                className="dropdown-item"
+                className="mobile-dropdown-item"
                 activeClassName="active"
                 onClick={toggleMobileMenu}
               >
@@ -232,44 +237,17 @@ function Navbar() {
             </div>
           </div>
 
-          <div className="mobile-nav-dropdown">
-            <button
-              className="mobile-nav-link dropdown-toggle"
-              onClick={() => toggleMobileDropdown("portfolio")}
-            >
-              Portfolio{" "}
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className={`dropdown-icon ${
-                  activeMobileDropdown === "portfolio" ? "active" : ""
-                }`}
-              />
-            </button>
-            <div
-              className={`dropdown-menu ${
-                activeMobileDropdown === "portfolio" ? "active" : ""
-              }`}
-            >
-              <NavLink
-                to="/recent-projects"
-                className="dropdown-item"
-                activeClassName="active"
-                onClick={toggleMobileMenu}
-              >
-                Recent Projects
-              </NavLink>
-              <NavLink
-                to="/case-studies"
-                className="dropdown-item"
-                activeClassName="active"
-                onClick={toggleMobileMenu}
-              >
-                Client Case Studies
-              </NavLink>
-            </div>
-          </div>
           <NavLink
-            to="/contact"
+            to="/portfolio"
+            className="mobile-nav-link"
+            activeClassName="active"
+            onClick={toggleMobileMenu}
+          >
+            Portfolio
+          </NavLink>
+
+          <NavLink
+            to="/contactus"
             className="mobile-nav-link"
             activeClassName="active"
             onClick={toggleMobileMenu}
