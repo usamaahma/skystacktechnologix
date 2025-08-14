@@ -1144,6 +1144,9 @@ button {
 }
 
 @media (max-width: 768px) {
+  .crm-service{
+    margin-top: 5rem;
+  }
   .dashboard-sidebar {
     width: 60px;
   }

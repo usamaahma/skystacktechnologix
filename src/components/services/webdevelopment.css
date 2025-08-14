@@ -798,3 +798,9 @@
     height: 500px;
   }
 }
+@media (max-width: 768px) {
+   .dev-service {
+    margin-top: 4rem;
+  }
+
+}

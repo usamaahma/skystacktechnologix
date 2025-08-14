@@ -722,6 +722,9 @@ button {
 }
 
 @media (max-width: 768px) {
+  .webdesign-service{
+    margin-top: 5rem;
+  }
   .mockup-nav {
     gap: 0.5rem;
   }

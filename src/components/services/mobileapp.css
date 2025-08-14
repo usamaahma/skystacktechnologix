@@ -853,6 +853,9 @@ button {
 }
 
 @media (max-width: 768px) {
+  .mobileapp-service{
+    margin-top: 4rem;
+  }
   .phone-mockup {
     flex-direction: column;
     gap: clamp(1.5rem, 3vw, 2rem);
